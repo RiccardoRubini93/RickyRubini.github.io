@@ -101,7 +101,7 @@
 					<p>A <a href="../pdfs/Traffic.zip">Finite Volume</a> code for the Burgher equation with the Godunov scheme. This is a very smart way to compute the numerical fluxes at the cells' interfaces, if you are interested take a look <a href="../pdfs/chap8.pdf">here</a></p>
 				</li>
 				<li>
-					<p>Other two script that generates the GUI for the <a href="../pdfs/GUI_heat_eq.zip">Heat Equation</a> and <a href="../pdfs/GUI_burghers.zip">Burgher Equation</a></p>
+					<p>Other two scripts that generates the GUI for the <a href="../pdfs/GUI_heat_eq.zip">Heat Equation</a> and <a href="../pdfs/GUI_burghers.zip">Burgher Equation</a></p>
 				</li>
 				<li>
 					<p>Some finite differences schemes in order to solve in a 2D rectangular domain the equation of <a href="../pdfs/Laplace_2D.m">Laplace</a>, <a href="../pdfs/Poisson_2D.m">Poisson</a> and of the <a href="../pdfs/Parabolic_2D.m">Heat</a>. </p>
@@ -115,16 +115,16 @@
 				<ul>
 				<li><a href="../pdfs/TULABS.pdf">TULABS</a>: this is my very first laboratory experience, the aim is to evaluate the performances and measure the features of the flow field in an axial compressor.</li>
 				</ul>
-	<h3>Some MATLAB/Octave script to compute compressible inviscid flow in quasi 1-D duct</h3>
+	<h3>Some MATLAB/Octave scripts to compute compressible inviscid flow in quasi 1-D duct</h3>
 				<ul>
 				<li>
-					<p><a href="../pdfs/Sod_shock_tube.zip">Sod shock tube solver</a>. This is a simple script that solve the shock tube problem. The space is discretize with the finite volume method using the upwind <a href="../pdfs/chap_6.pdf">Roe's Scheme</a> while the temporal part is discretize with an Euler explicit.</p>
+					<p><a href="../pdfs/Sod_shock_tube.zip">Sod shock tube solver</a>. This is a simple script that solves the shock tube problem. The space is discretized with the finite volume method using the upwind <a href="../pdfs/chap_6.pdf">Roe's Scheme</a> while the temporal part is discretized with an Euler explicit.</p>
 				</li>
 				<li>
 					<p>The same alghoritm of the shock tube preesented before applied to a<a href="../pdfs/Quasi_1D_nozzle.zip"> Quasi 1D nozzle</a>.</p>
 				</li>
 				<li>
-					<p>A Little <a href="../pdfs/ROE.zip">Program</a> of a very simple 1-D throughflow model. I develop this script to understand the feasibility of the idea and the I have implemented the <a href="../pdfs/Tesi_RRubini.pdf"> 2D model</a> in a CFD software. The idea seems to be working... anyway the convergence is terribly slow and it still needs a rigorous validation.</p>
+					<p>A Little <a href="../pdfs/ROE.zip">Program</a> of a very simple 1-D throughflow model. I developed this script to understand the feasibility of the idea and then I have implemented the <a href="../pdfs/Tesi_RRubini.pdf"> 2D model</a> in a CFD software. The idea seems to be working... anyway the convergence is terribly slow and it still needs a rigorous validation.</p>
 				</li>
 				</ul> 
 	<h3>Some Python script for the post processing of CFD results</h3>
@@ -142,7 +142,7 @@
 				</ul>-->
 
 <h1>Python</h1>
-	<h2>Useless python scripts I develop for curiosity and just for fun</h2>
+	<h2>Useless python scripts I developed for curiosity and just for fun</h2>
 			<ul>
 				<li>
 					<p>Would you like to generate beautiful fractal like the one in the cover of this page? (well non so beautiful). Here you have a script the compute the <a href="../pdfs/mandelbrot.py">Mandelbrot</a>. Many thanks to the <a href="http://rosettacode.org/wiki/Rosetta_Code">Rosetta</a> code project for the help. Take a look on it it is very cool.</p>
@@ -156,7 +156,7 @@
 	<h2>Incompressible Navier Stokes solver</h2>
 	<ul>
 		<li>
-			<p><a href="../pdfs/Cavity.zip">2-D Navier Stokes</a> incompressible solver, the algorithm implemented is a Pressure Based <a href="https://en.wikipedia.org/wiki/SIMPLE_algorithm">SIMPLE</a> alghoritm. To compute the pressure I used the <a href="http://www.engr.uky.edu/~acfd/me691-lctr-nts.pdf">Poisson</a> equation technique of the<a href="http://www.engr.uky.edu/~acfd/me691-lctr-nts.pdf"> artificial compressibility</a> approach. The code solves the system of 2-D Navier Stokes equations coupled with the equation of transport of a non interacting scalar variables (Temperature in this case). The algoritm is applied to a very simple cavity flow but it is general for every geometry on a structured mesh. Finally I would like to thanks <a href="http://lorenabarba.com/blog/cfd-python-12-steps-to-navier-stokes/">Lorena A. Barba Group</a> that with his tutorials helped me a lot to understand how to structure and implement the code.</p>
+			<p><a href="../pdfs/Cavity.zip">2-D Navier Stokes</a> incompressible solver, the algorithm implemented is a Pressure Based <a href="https://en.wikipedia.org/wiki/SIMPLE_algorithm">SIMPLE</a> alghoritm. To compute the pressure I used the <a href="http://www.engr.uky.edu/~acfd/me691-lctr-nts.pdf">Poisson</a> equation technique of the<a href="http://www.engr.uky.edu/~acfd/me691-lctr-nts.pdf"> artificial compressibility</a> approach. The code solves the system of 2-D Navier Stokes equations coupled with the equation of transport of a non interacting scalar variables (Temperature in this case). The algoritm is applied to a very simple cavity flow but it is general for every geometry on a structured mesh. Finally I would like to thanks <a href="http://lorenabarba.com/blog/cfd-python-12-steps-to-navier-stokes/">Lorena A. Barba Group</a> that with her tutorials helped me a lot to understand how to structure and implement the code.</p>
 			<img src="../images/cavity.png" alt="Temperature Field and Streamlines of the Cavity Flow">
 		</li>
 	</ul>
