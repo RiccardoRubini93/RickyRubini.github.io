@@ -156,12 +156,16 @@
 	<h2>Incompressible Navier Stokes solver</h2>
 	<ul>
 		<li>
-			<p><a href="../pdfs/Cavity.zip">2-D Navier Stokes</a> incompressible solver, the algorithm implemented is a Pressure Based <a href="https://en.wikipedia.org/wiki/SIMPLE_algorithm">SIMPLE</a> alghoritm. To compute the pressure I used the <a href="http://www.engr.uky.edu/~acfd/me691-lctr-nts.pdf">Poisson</a> equation technique of the<a href="http://www.engr.uky.edu/~acfd/me691-lctr-nts.pdf"> artificial compressibility</a> approach. The code solves the system of 2-D Navier Stokes equations coupled with the equation of transport of a non interacting scalar variables (Temperature in this case). The algoritm is applied to a very simple cavity flow but it is general for every geometry on a structured mesh. Finally I would like to thanks <a href="http://lorenabarba.com/blog/cfd-python-12-steps-to-navier-stokes/">Lorena A. Barba Group</a> that with her tutorials helped me a lot to understand how to structure and implement the code.</p>
+			<p><a href="../pdfs/Cavity.zip">2-D Navier Stokes</a> incompressible solver, the algorithm implemented is a Pressure Based <a href="https://en.wikipedia.org/wiki/SIMPLE_algorithm">SIMPLE</a> algorithm. To compute the pressure I used the <a href="http://www.engr.uky.edu/~acfd/me691-lctr-nts.pdf">Poisson</a> equation technique of the<a href="http://www.engr.uky.edu/~acfd/me691-lctr-nts.pdf"> artificial compressibility</a> approach. The code solves the system of 2-D Navier Stokes equations coupled with the equation of transport of a non interacting scalar variables (Temperature in this case). The algorithm is applied to a very simple cavity flow but it is general for every geometry on a structured mesh. Finally I would like to thanks <a href="http://lorenabarba.com/blog/cfd-python-12-steps-to-navier-stokes/">Lorena A. Barba Group</a> that with her tutorials helped me a lot to understand how to structure and implement the code.</p>
 			<img src="../images/cavity.png" alt="Temperature Field and Streamlines of the Cavity Flow">
 		</li>
 	</ul>
 
-
+	<h2>Edge detection</h2>
+		<ul>
+			<li>
+				<p>Python script to perform <a href="../pdfs/edge_detection.py">Edge Detection</a> on simple figures. The algorithm is based on the<a href="https://en.wikipedia.org/wiki/Canny_edge_detector">Canny</a> filter. So far the algorithm recognize the border of the image and export the (x,y) coordinates without any order (ordering the coordinate of the edge will be the next step).
+				<img src="../images/canny_filter.png" alt="Edge Detection by Canny Filter">	
 
     </article>
             </div>
