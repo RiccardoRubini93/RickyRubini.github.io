@@ -107,11 +107,11 @@
 					<p>Some finite difference schemes in order to solve in a 2D rectangular domain the equation of <a href="../pdfs/Laplace_2D.m">Laplace</a>, <a href="../pdfs/Poisson_2D.m">Poisson</a> and of the <a href="../pdfs/Parabolic_2D.m">Heat</a>. </p>
 				</li>
 				<li>
-					<p>A finite differences scheme to solve the  equation of <a href="../pdfs/Alembert.m">Alembert</a> in an 'infinite' domain. </p>
+					<p>A finite difference scheme to solve the  equation of <a href="../pdfs/Alembert.m">Alembert</a> in an 'infinite' domain. </p>
 				</li>
 				</ul>
 <h1>VKI works</h1>
-		<p>Some stuffs I worked on during the Internship and the Research Master at von Karman Institute.</p>
+		<p>Some stuff I worked on during the Internship and the Research Master at von Karman Institute.</p>
 				<ul>
 				<li><a href="../pdfs/TULABS.pdf">TULABS</a>: this is my very first laboratory experience, the aim is to evaluate the performances and measure the features of the flow field in an axial compressor.</li>
 				</ul>
@@ -121,7 +121,7 @@
 					<p><a href="../pdfs/Sod_shock_tube.zip">Sod shock tube solver</a>. This is a simple script that solves the shock tube problem. The space is discretized with the finite volume method using the upwind <a href="../pdfs/chap_6.pdf">Roe's Scheme</a> while the temporal part is discretized with an Euler explicit.</p>
 				</li>
 				<li>
-					<p>The same alghoritm of the shock tube preesented before applied to a<a href="../pdfs/Quasi_1D_nozzle.zip"> Quasi 1D nozzle</a>.</p>
+					<p>The same alghoritm of the shock tube presented before being applied to a<a href="../pdfs/Quasi_1D_nozzle.zip"> Quasi 1D nozzle</a>.</p>
 				</li>
 				<li>
 					<p>A Little <a href="../pdfs/ROE.zip">Program</a> of a very simple 1-D throughflow model. I developed this script to understand the feasibility of the idea and then I have implemented the <a href="../pdfs/Tesi_RRubini.pdf"> 2D model</a> in a CFD software. The idea seems to be working... anyway the convergence is terribly slow and it still needs a rigorous validation.</p>
@@ -156,7 +156,7 @@
 	<h2>Incompressible Navier Stokes solver</h2>
 	<ul>
 		<li>
-			<p><a href="../pdfs/Cavity.zip">2-D Navier Stokes</a> incompressible solver, the algorithm implemented is a Pressure Based <a href="https://en.wikipedia.org/wiki/SIMPLE_algorithm">SIMPLE</a> algorithm. To compute the pressure I used the <a href="http://www.engr.uky.edu/~acfd/me691-lctr-nts.pdf">Poisson</a> equation technique of the<a href="http://www.engr.uky.edu/~acfd/me691-lctr-nts.pdf"> artificial compressibility</a> approach. The code solves the system of 2-D Navier Stokes equations coupled with the equation of transport of a non interacting scalar variables (Temperature in this case). The algorithm is applied to a very simple cavity flow but it is general for every geometry on a structured mesh. Finally I would like to thanks <a href="http://lorenabarba.com/blog/cfd-python-12-steps-to-navier-stokes/">Lorena A. Barba Group</a> that with her tutorials helped me a lot to understand how to structure and implement the code.</p>
+			<p><a href="../pdfs/Cavity.zip">2-D Navier Stokes</a> incompressible solver, the algorithm implemented is a Pressure Based <a href="https://en.wikipedia.org/wiki/SIMPLE_algorithm">SIMPLE</a> algorithm. To compute the pressure I used the <a href="http://www.engr.uky.edu/~acfd/me691-lctr-nts.pdf">Poisson</a> equation technique of the<a href="http://www.engr.uky.edu/~acfd/me691-lctr-nts.pdf"> artificial compressibility</a> approach. The code solves the system of 2-D Navier Stokes equations coupled with the equation of transport of a non interacting scalar variables (Temperature in this case). The algorithm is applied to a very simple cavity flow but it is general for every geometry on a structured mesh. Finally I would like to thank <a href="http://lorenabarba.com/blog/cfd-python-12-steps-to-navier-stokes/">Lorena A. Barba Group</a> that with her tutorials helped me a lot to understand how to structure and implement the code.</p>
 			<img src="../images/cavity.png" alt="Temperature Field and Streamlines of the Cavity Flow">
 		</li>
 	</ul>
@@ -164,13 +164,13 @@
 	<h2>Edge detection</h2>
 		<ul>
 			<li>
-				<p>Python script to perform <a href="../pdfs/edge_detection.py">Edge Detection</a> on simple figures. The algorithm is based on the<a href="https://en.wikipedia.org/wiki/Canny_edge_detector"> Canny</a> filter. So far the algorithm recognize the border and extract the coordinate in clockwise direction according to the <a href="http://www.geeksforgeeks.org/convex-hull-set-1-jarviss-algorithm-or-wrapping/"> Convex Hull</a> algorithm. However it works fine only for convex shapes.
+				<p>Python script to perform <a href="../pdfs/edge_detection.py">Edge Detection</a> on simple figures. The algorithm is based on the<a href="https://en.wikipedia.org/wiki/Canny_edge_detector"> Canny</a> filter. So far the algorithm recognizes the border and extracts the coordinate in clockwise direction according to the <a href="http://www.geeksforgeeks.org/convex-hull-set-1-jarviss-algorithm-or-wrapping/"> Convex Hull</a> algorithm. However it works fine only for convex shapes.
 				<img src="../images/edge_detection.png" alt="Edge Detection by Canny Filter">	
 			</li>
 		</ul>
 		<ul>
 			<li>
-			<p>The next side work on with I am working on is try to integrate the edge detection algorithm with a panel code in order to compute the flow around object with a simple photo. Updates will follow soon (I hope)...</p>
+			<p>The next step will be trying to integrate the edge detection algorithm with a panel code in order to compute the flow around object with a simple photo. Updates will follow soon (I hope)...</p>
 			</li>
 		</ul>
 
