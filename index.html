@@ -1,172 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Animated Background Headers | Demo 1</title>
+		<meta name="description" content="Examples for creative website header animations using Canvas and JavaScript" />
+		<meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+		<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container demo-1">
+			<div class="content">
+				<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+					<h1 class="main-title">R<span class="thin">iccardo</span>    R<span class = "thin">ubini</span></h1>
+					<!--<h2><span class="thin">Engineer</span></h2>-->
+				</div>
+			
+				<div class="codrops-header">
+					<h1> <span>I'm Riccrado Engineer and Triathlete just for fun. Welcome on my personal webpage. Surf the below to discover somethiing about me.</span></h1>
+					<nav class="codrops-demos">
+						
+						<a href="pages/about-me.html">About me</a>
+						<a href="pages/experiences.html">Experiences</a>
+						<a href="pages/junks.html">Junks</a>
+					</nav>
+				</div>
+			</div>
+			
+		</div> <!-- /container -->
+		<script src="js/TweenLite.min.js"></script>
+		<script src="js/EasePack.min.js"></script>
+		<script src="js/rAF.js"></script>
+		<script src="js/demo-1.js"></script>
 
-<head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-        <title>Riccardo Rubini Personal Page</title>
-
-        <!-- Bootstrap Core CSS -->
-        <link href="theme/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="theme/css/clean-blog.min.css" rel="stylesheet">
-
-        <!-- Code highlight color scheme -->
-            <link href="theme/css/code_blocks/darkly.css" rel="stylesheet">
-
-
-        <!-- Custom Fonts -->
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-                <meta property="og:locale" content="en_UK">
-		<meta property="og:site_name" content="Riccardo Rubini Personal Page">
-</head>
-
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="https://riccardorubini93.github.io/rickyrubini.github.io/">Riccardo Rubini Personal Page</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-
-                            <li><a href="pages/about-me.html" target="_blank">About Me</a></li>
-                            <!--<li><a href="pages/contact-me.html">Contact me</a></li>-->
-                            <li><a href="pages/experiences.html" target="_blank" >Experiences</a></li>
-                            <li><a href="pages/junks.html" target="_blank">Junks</a></li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-        <header class="intro-header" style="background-image: url('images/milkyway.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h1>Hello People!!! Welcome on my page</h1>
-                            <!--<hr class="small">
-                            <span class="subheading"></span>-->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-preview">
-            <article>
-        <p>I'm Riccardo Rubini, Engineer and Triathlete just for fun. This simple website is supposed to be a collection of all the works (in reality not so many)
-			I performed during my Engineering Degree and some other stuff I made separately. These pages are my very first attempt to develop a little website like this so if you find something wrong or simply you have some suggestions please don't hesitate to email me at riru93@gmail.com.</p>
-			<h1>Main Contents</h1>
-			<ul>
-			<li>A brief introduction of my interests and passions in the <a href="pages/about-me.html" target="_blank">About Me</a> page</li>
-			<li>A short  description of my current and past experiences in the <a href="pages/experiences.html" target="_blank" >Experiences</a> section</li>
-			<li>A small collection of <a href="pages/junks.html" target="_blank">Works</a> I have developed during my studies, hoping it could be useful for someone else.</li>
-			</ul>
-    		</article>
-
-            <!--<a href="http://localhost:8000/my-super-post.html" rel="bookmark" title="Permalink to Hello There Welcome on my page!!!">
-                <h2 class="post-title">
-                    Hello There Welcome on my page!!!
-                </h2>
-            </a>
-                <p class="article-summary">
-                    Short version for index and feeds
-                </p>
-            <p class="post-meta">Posted by
-                    <a href="http://localhost:8000/author/alexis-metaireau.html">Alexis Metaireau</a>
-                    <a href="http://localhost:8000/author/conan-doyle.html">Conan Doyle</a>
-                 on December 03, 2010
-            </p> -->
-        </div>
-
-            </div>
-        </div>
-    </div>
-
-    <hr>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                            <li>
-                                <a href="https://www.facebook.com/profile.php?id=100009488021331" target="_blank">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/RiccardoRubini93" target="_blank">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/riccardo-rubini-095100133/" target="_blank">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                    </ul>
-<p class="copyright text-muted">
-    Blog powered by <a href="http://getpelican.com" target="_blank">Pelican</a>,
-    which takes great advantage of <a href="http://python.org" target="_blank">Python</a>.
-</p>                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="https://github.com/RiccardoRubini93/rickyrubini.github.io/theme/js/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="https://github.com/RiccardoRubini93/rickyrubini.github.io/theme/js/bootstrap.min.js"></script>
-
-        <!-- Custom Theme JavaScript -->
-        <script src="https://github.com/RiccardoRubini93/rickyrubini.github.io/theme/js/clean-blog.min.js"></script>
-
-</body>
-
+	</body>
 </html>
