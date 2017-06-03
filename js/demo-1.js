@@ -1,6 +1,6 @@
 (function() {
 
-    var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+    var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true, number_point,number_p;
 
     // Main
     initHeader();
@@ -22,17 +22,18 @@
 
         // create points
         points = [];
-        for(var x = 0; x < width; x = x + width/20) {
-            for(var y = 0; y < height; y = y + height/20) {
-                var px = x + Math.random()*width/20;
-                var py = y + Math.random()*height/20;
+	number_p = 40
+        for(var x = 0; x < width; x = x + width/number_p) {
+            for(var y = 0; y < height; y = y + height/number_p) {
+                var px = x + Math.random()*width/number_p;
+                var py = y + Math.random()*height/number_p;
                 var p = {x: px, originX: px, y: py, originY: py };
                 points.push(p);
             }
         }
 
         // for each point find the 10 closest points
-	var number_point = 8
+	number_point = 8
         for(var i = 0; i < points.length; i++) {
             var closest = [];
             var p1 = points[i];
