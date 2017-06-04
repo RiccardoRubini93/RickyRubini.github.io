@@ -1,4 +1,5 @@
-(function() {
+(function() 
+	{
 
     var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true, number_point, number_p;
 
@@ -7,7 +8,8 @@
     initAnimation();
     addListeners();
 
-    function initHeader() {
+    function initHeader() 
+    	{
         width = window.innerWidth;
         height = window.innerHeight;
         target = {x: width/2, y: height/2};
@@ -20,38 +22,48 @@
         canvas.height = height;
         ctx = canvas.getContext('2d');
 
-        // create points
+        // create $number_p point distribuited in the screen
         points = [];
-	number_p = 40;
-        for(var x = 0; x < width; x = x + width/number_p) {
-            for(var y = 0; y < height; y = y + height/number_p) {
+		number_p = 40;
+        for(var x = 0; x < width; x = x + width/number_p) 
+        	{
+            for(var y = 0; y < height; y = y + height/number_p) 
+            	{
                 var px = x + Math.random()*width/number_p;
                 var py = y + Math.random()*height/number_p;
                 var p = {x: px, originX: px, y: py, originY: py };
                 points.push(p);
-            }
-        }
+            	}
+        	}
 
-        // for each point find the 10 closest points
+        // for each point find the $number_point  closest points
 	number_point = 8;
-        for(var i = 0; i < points.length; i++) {
+        for(var i = 0; i < points.length; i++) 
+        	{
             var closest = [];
             var p1 = points[i];
-            for(var j = 0; j < points.length; j++) {
+            for(var j = 0; j < points.length; j++) 
+            	{
                 var p2 = points[j]
-                if(!(p1 == p2)) {
+                if(!(p1 == p2)) 
+                	{
                     var placed = false;
-                    for(var k = 0; k < number_point; k++) {
-                        if(!placed) {
-                            if(closest[k] == undefined) {
+                    for(var k = 0; k < number_point; k++) 
+                    	{
+                        if(!placed) 
+                        	{
+                            if(closest[k] == undefined) 
+                            	{
                                 closest[k] = p2;
                                 placed = true;
-                            }
+                            	}
                         }
                     }
 
-                    for(var k = 0; k < number_point; k++) {
-                        if(!placed) {
+                    for(var k = 0; k < number_point; k++) 
+                    	{
+                        if(!placed) 
+                        	{
                             if(getDistance(p1, p2) < getDistance(p1, closest[k])) {
                                 closest[k] = p2;
                                 placed = true;
@@ -64,14 +76,16 @@
         }
 
         // assign a circle to each point
-        for(var i in points) {
+        for(var i in points) 
+        	{
             var c = new Circle(points[i], 2+Math.random()*2, 'rgba(255,255,255,0.3)');
             points[i].circle = c;
-        }
+        	}
     }
 
     // Event handling
-    function addListeners() {
+    function addListeners() 
+    	{
         if(!('ontouchstart' in window)) {
             window.addEventListener('mousemove', mouseMove);
         }
