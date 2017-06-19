@@ -1,6 +1,43 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
+
+		<script>
+  			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  			ga('create', 'UA-101267317-1', 'auto');
+  			ga('send', 'pageview');
+
+		</script>
+
+
+
 	<head>
+
+		 <script language="javascript"> 
+  
+  				function DisplayVisits() 
+ 				{    
+  				// How many visits so far? 
+      				var numVisits = GetCookie("numVisits"); 
+      				if (numVisits) numVisits = parseInt(numVisits) + 1; 
+      				else numVisits = 1; // the value for the new cookie 
+  
+ 					 // Show the number of visits 
+      				if (numVisits==1) document.write("This is your first visit."); 
+      				else document.write("You have visited this page " + numVisits + " times."); 
+  
+  					// Set the cookie to expire 365 days from now 
+      				var today = new Date(); 
+      				today.setTime(today.getTime() + 365 /*days*/ * 24 /*hours*/ * 60 /*minutes*/ * 60 /*seconds*/ * 1000 /*milliseconds*/); 
+      				SetCookie("numVisits", numVisits, today); 
+  				} 
+  
+  </script>
+
+
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
@@ -14,17 +51,6 @@
 		<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-	<script>
-  			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  			ga('create', 'UA-101267317-1', 'auto');
-  			ga('send', 'pageview');
-
-		</script>
-
 
 	</head>
 	<body>
@@ -49,6 +75,8 @@
 		</div> <!-- /container -->
 
 		<p class="ref" style="font-size:10px">Thanks to <a href="http://tympanus.net/codrops/?p=20153">codrops</a> for the help in understanding the algorithm of the fancy animation in the cover image.</p>
+
+		 <script language="javascript">DisplayVisits();</script>
 
 		<script src="js/TweenLite.min.js"></script>
 		<script src="js/EasePack.min.js"></script>
