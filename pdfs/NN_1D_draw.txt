@@ -1,0 +1,47 @@
+digraph G {
+
+        rankdir=LR
+	splines=line
+        
+        node [fixedsize=true, label=""];
+
+        subgraph cluster_0 {
+		color=white;
+		node [style=solid,color=blue4, shape=circle];
+		x1 
+		label = "layer 1 (Input layer)";
+	}
+
+	subgraph cluster_1 {
+		color=white;
+		node [style=solid,color=red2, shape=circle];
+		a1 a2 a3 a4 a5 a6 a7 a8;
+		label = "layer 2 (hidden layer)";
+	}
+
+	subgraph cluster_2 {
+		color=white;
+		node [style=solid,color=seagreen2, shape=circle];
+		O;
+		label="layer 3 (output layer)";
+	}
+
+        x1 -> a1;
+        x1 -> a2;
+        x1 -> a3;
+ 		x1 -> a4;
+        x1 -> a5;
+        x1 -> a6;
+		x1 -> a7;
+        x1 -> a8;
+        
+        a1  -> O
+        a2  -> O
+        a3  -> O
+		a4  -> O
+        a5  -> O
+        a6  -> O
+		a7  -> O
+        a8  -> O
+
+}
