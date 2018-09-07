@@ -41,6 +41,13 @@
         		width: 100%;
        		}
     	</style>
+
+	<style>
+      		#map4 {
+        		height: 300px;
+        		width: 100%;
+       		}
+    	</style>
     		
 
         <meta charset="utf-8">
@@ -95,7 +102,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-
+			    
+			    <li><a href="../pages/phd.html" target="_blank" >My PhD</a></li>
                             <li class="active"><a href="../pages/about-me.html" target="_blank" >About Me</a></li>
                             <!--<li><a href="../pages/contact-me.html">Contact me</a></li>-->
                             <li><a href="../pages/experiences.html" target="_blank">Experiences</a></li>
@@ -170,6 +178,16 @@
           map: map3
         });
 
+	var Soton = {lat: 50.908095, lng: -1.404635};
+        var map4 = new google.maps.Map(document.getElementById('map4'), {
+          zoom: 15,
+          center: Soton
+        });
+        var marker = new google.maps.Marker({
+          position: Soton,
+          map: map4
+        });
+
 
       }
       </script>
@@ -178,16 +196,34 @@
     		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTM7rU_ION8Tg47aAajIFQSsTuWfGn0E4&callback=initMap">
       </script>
       
+
+      <h1 align="center">Who I am...</h1>
+	
+
+      <IMG BORDER="0" ALIGN="Right" style="width:400px;height:400px;" SRC="../images/myself.jpg"><p> Hi I'm Riccardo, Aeronautical Engineering and life enthusiast. <br /> 
+	 Born and Raised in Italy (Chiavari) I started practising sport since very young enjoying the summer days of my hometown cycling, running and swimming. <br />
+	 During the winter I used to put away running shoes and swim cap and escape into the Alps to ride the fabulous slopes of Alagna Valsesia <br />
+	 As nerd and Iron Man fan &#9786 I studied Engineer Science in Genoa. Once took my degree I realised that the time to travel a bit and see  a bit of the world has come. <br />
+	 I packed up my stuff and I attended a master in Aeronautical propulsion in Brussels living there for one year. <br />
+	 Currently I am living in Southampton working on my PhD in Machine Learning and Fluid Dynamics. <br />
+	 Quoting what a wise man sad long time ago "The world is a book, and those who do not travel read only a page" I wish you the best hoping to see you around... </p>
+	<br />
+      
       <h1 align="center">Locations</h1>
       
       <h3>Chiavari</h3>
-      <p>I was born in Genova in 1993 and I grew up in the lovely little town of <a href="http://www.blumenriviera.co.uk/Italy/Italian_Riviera/Travelguide_Liguria/Municipalities/Chiavari/" target="_blank">Chiavari</a> just in the middle of the <a href="http://www.turismoinliguria.it/en/liguria-en/holiday-areas-info/eastern-riviera-en/tigullio-gulf.html?other=1" target="_blank">Golfo del Tigullio</a>.
-      Yoou can use the link to Google Maps below to mess around and take a look on the nice seaside and the typical "caruggi" of Chiavari</p>
+      <p>I grew up in the lovely little town of <a href="http://www.blumenriviera.co.uk/Italy/Italian_Riviera/Travelguide_Liguria/Municipalities/Chiavari/" target="_blank">Chiavari</a> just in the middle of the <a href="http://www.turismoinliguria.it/en/liguria-en/holiday-areas-info/eastern-riviera-en/tigullio-gulf.html?other=1" target="_blank">Golfo del Tigullio</a>.
+      You can use the link to Google Maps below to walk around and take a look on the nice seaside and the typical "caruggi" of Chiavari</p>
       <div id="map"></div>
 
       <h3>Brussels</h3>
-      <p>Nowadays I am living near <a href="https://www.brussels.be/" target="_blank">Brussels</a> just on the border between the Flemish and Wallon regions of Belgium.</p>  
+      <p>I lived for a while near <a href="https://www.brussels.be/" target="_blank">Brussels</a> just on the border between the Flemish and Wallon regions of Belgium.</p>  
       <div id="map3"></div>
+
+      <h3>Southampton</h3>
+      <p>Nowadays I am living here in <a href="http://www.discoversouthampton.co.uk/visit" target="_blank">Southampton</a> just on the British Channel</p>  
+      <div id="map4"></div>
+
 
       <h1 align="center">Sport</h1>
 
