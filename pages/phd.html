@@ -126,29 +126,29 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <article>
- 	 <p>The main purpose of this page is to give a first glimpse on the thematic I am tackling in my PhD project... It is still ongoing so the page is not complete and will be updated soon. So stay tuned!</p>
+ 	 <p>The main purpose of this page is to give a first glimpse on the thematic I am tackling in my PhD project... This is still an ongoing research so the page is not complete. New contents will be uploaded soon! Stay tuned!</p>
+	
 	<h1>Motivation</h1>
 	
-	<p>The amount of information needed to describe a turbulent flow as the Reynolds number increases becomes quickly unmanageable</p>
+	<p>The amount of information needed to describe a turbulent flow becomes quickly unmanageable as the Reynolds number increases</p>
 	
 	<img src="../images/DOF.png" alt="Snow" style="width:100%">
 			
 
 	<h1>Main Idea</h1>
-	<h2>Reduced Order Model</h2>
+	<h2>Reduced Order Models</h2>
 	
 	<p>Decompose the flow field in the modes (shapes) that contain the most of the energy and describe the evolution of only those modes</p>
 
 	$$\color{black}{u(x,t) = U(x) + \sum_{i}^N {\phi(x) a(t)}}$$	
 
-	<p>A cool example is given by the decomposition of the flow field around a circular cylinder</p>
+	<p>A nice example is given by the decomposition of the unsteady flow field around a circular body.</p>
 
 	<video style="width:100%" poster="../images/poster_cylinder.png" controls autoplay loop>
    		<source src="../images/cylinder.mp4" type="video/mp4">	
 	</video>
 
-	<p>The unsteady flow field can be decomposed in a steady part (upper left) and then in a series of modes ranked according to their energy content. Figure upper right and bottom left and right 
-	represent the spatial shape the energy content and the temporal evolution of three POD modes</p>
+	<p>The unsteady flow field can be decomposed in a steady part (upper left) and then in a series of spatial modes ranked according to their energy content. Figure upper right and bottom left and right represent the spatial shapes, the energy content and the temporal evolution of three POD modes.</p>
 
 	<div class="row">
   		<div class="column">
@@ -169,19 +169,19 @@
 	</div>
 
 
-	<p>Every mode interacts with all the others in a non trivial way</p>
-	<p>Leverage the capabilities of the machine learning to neglect the non necessary interactions</p>
+	<p>The main arising problem is that due to the non linear nature of the governing equations every mode interacts with all the others in a non trivial way.</p>
+	<p>We would like to leverage the capabilities of the machine learning to neglect the non necessary interactions.</p>
 	
 
 	<h1>Under the hood of Machine Learning</h1>
 
-	<p>In a nutshell machine learning is the field of computer science that uses statistical techniques that give the machine the ability to "learn" from data
-	without being explicitly programmed</p>	
+	<p>In a nutshell machine learning is the field of computer science that "uses statistical techniques that give the machine the ability to "learn" from data
+	without being explicitly programmed"</p>	
 	
 	<h2> LASSO Regression</h2>
 		
 	<p>The main idea is to create a procedure capable to select only the most important feature that contribute in the description of a certain model. This is achieved adding to 
-	a standard least square formulation a penalisation term in the form of a $\color{black}{l1}$ norm</p>
+	a standard least square formulation a penalisation term in the form of a $\color{black}{l1}$ norm:</p>
 	
 
 	$$\color{black}{\tilde{\beta} = \min_{\beta}{||\beta \Theta(a) - \dot{A} ||_2^2 + \lambda ||\beta||_1 }}$$
@@ -198,9 +198,9 @@
 			</br>
 			</br>
     			$\color{black}{\LARGE \begin{eqnarray}
-  			\dot{X} &=& \sigma(Y-X) \label{eq:X}\\
-  			\dot{Y} &=& -XZ + rX -Y \label{eq:Y}\\
-  			\dot{Z} &=& XY - bZ \label{eq:Z}
+  			\dot{x} &=& \sigma(y-x) \label{eq:x}\\
+  			\dot{y} &=& -xz + rx - y \label{eq:y}\\
+  			\dot{z} &=&  xy - bz \label{eq:z}
 			\end{eqnarray}}$
   		</div>
   		<div class="column">
@@ -214,14 +214,14 @@
 
 	<p>The system can be recast in the following way more suitable to perform regression:</p>
 	$$\color{black}{\dot{A} = \Theta(a) \beta}$$ 
-	<p>In particular $\color{black}{\dot{A}}$ is a matrix of which every column contains the temporal story of the local acceleration $\color{black}{[\dot{X}, \dot{Y}, \dot{Z}]}$ in this case.</p> 
+	<p>In particular: $\color{black}{\dot{A}}$ is a matrix of which every column contains the temporal story of the local acceleration $\color{black}{[\dot{X}, \dot{Y}, \dot{Z}]}$ in this case.</p> 
 	<p>$\color{black}{\Theta(a)}$ contains the temporal story of the linear and non linear interactions of the system, in this case $\color{black}{[1,X,Y,Z,X^2,XY,XZ,Y^2,YZ,Z^2]}$ </p>
-	<p>The entries of $\color{black}{\beta}$ are the degrees of freedom of the optimisation procedure, the non zero coefficients of this matrix select the interactions that contribute the most to the dynamic of a 	certain mode</p>
+	<p>The entries of $\color{black}{\beta}$ are the degrees of freedom of the optimisation procedure, the non zero coefficients of this matrix select the interactions that contribute the most to the dynamic of a certain mode</p>
 
 	<img src="../images/Sparse_ode.png"  style="width:80%">
 	
 
-	<p>It is interesting to observe how increasing the value of the regularisation parameter $\color{black}{\lambda}$ the algorithm is able to extract only the terms of the matrix $\color{black}{\beta}$ that contribute effectively to the dynamics of the system</p>
+	<p>It is interesting to observe how increasing the value of the regularisation parameter $\color{black}{\lambda}$ the algorithm is able to extract only the terms of the matrix $\color{black}{\beta}$ that contribute effectively to the dynamics of the system. Moving from left to right in the left graph we can observe that the reconstruction error ( defined as $\color{black}{\frac{1}{T} \int_{T} \int_{V} ||\dot{X}_{rec} - \dot{X}_{ori}||_2^2 dxdydzdt}$ where rec is the reconstructed solution and ori the original one) doesn't change much as a lot of unnecessary term are erased from the system. An optimum number of terms, in this case, exist and it is located at the knee point of the red curve.</p>
 
 	<video src = "../images/sparse_pattern.mp4" style="width:100%" controls autoplay loop></video>
 
@@ -246,10 +246,16 @@
 
 	<div class="row">
   		<div class="column">
-    			<video src = "../images/KS_vid1.mp4" style="width:80%" controls autoplay loop></video>
+    			<!--<video src = "../images/KS_vid1.mp4" style="width:80%" controls autoplay loop></video>-->
+			<video style="width:100%" poster="../images/KS_1.png" controls autoplay loop>
+   				<source src="../images/KS_vid1.mp4" type="video/mp4">	
+			</video>
   		</div>
   		<div class="column">
-    			<video src = "../images/KS_vid2.mp4" style="width:80%" controls autoplay loop></video>
+    			<!--<video src = "../images/KS_vid2.mp4" style="width:80%" controls autoplay loop></video>-->
+			<video style="width:100%" poster="../images/KS_2.png" controls autoplay loop>
+   				<source src="../images/KS_vid2.mp4" type="video/mp4">	
+			</video>
   		</div>
 	</div>
 	
