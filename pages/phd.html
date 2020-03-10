@@ -130,174 +130,64 @@
 	
 	<h1>Motivation</h1>
 	
-	<p>The amount of information needed to describe a turbulent flow becomes quickly unmanageable as the Reynolds number increases</p>
+	<p>Although Reduced Order Modelling has been successful in many appications concerning analysis and flow control one of the main limitation is still the high computational cost associated with the nonlinear term. The main objective is to develop a systematic data-driven methodology to construct sparsely-connected models of turbulent flows, capturing the underlying sparsity in the structure of energy interactions between scales.</p>
 	
-	<img src="../images/DOF.png" alt="Snow" style="width:100%">
+	<!--<img src="../images/DOF.png" alt="Snow" style="width:100%">-->
 			
 
 	<h1>Main Idea</h1>
-	<h2>Reduced Order Models</h2>
+	<h2>Reduced Order Modelling</h2>
 	
-	<p>Decompose the flow field in the modes (shapes) that contain the most of the energy and describe the evolution of only those modes</p>
+	<p>Decomposing the flow field in temporal and spatial shapes and then describe their evolution.</p>
 
-	$$\color{black}{u(x,t) = U(x) + \sum_{i}^N {\phi(x) a(t)}}$$	
+	<!--$$\color{black}{u(x,t) = U(x) + \sum_{i}^N {\phi(x) a(t)}}$$-->	
 
-	<p>A nice example is given by the decomposition of the unsteady flow field around a circular body.</p>
+	<img src="../images/ROM.png" alt="Snow" style="width:100%">
 
-	<video style="width:100%" poster="../images/poster_cylinder.png" controls autoplay loop>
-   		<source src="../images/cylinder.mp4" type="video/mp4">	
+
+	<p>The main problem arises from the non linear nature of the governing equations every mode interacts with all the others in a non trivial way.</p>
+	<p>We would like to leverage the capabilities of the machine learning to learn from data which terms of the model are relevant for the dynamics of the system.</p>
+	
+
+	<h2>Methodology</h2>
+
+	<p></p>	
+	
+	<img src="../images/ML_framework.png" alt="Snow" style="width:100%">
+
+
+	<img src="../images/methodology.png" alt="Snow" style="width:100%">
+
+
+	<h1>Two dymensional turbulence</h1>
+
+	<p>We applyed this methodology to the unsteady flow developing inside a lid driven cavity at Re = 20.000</p>
+
+
+	<video style="width:80%" controls autoplay loop>
+   		<source src="../images/DNS.ogv" type="video/mp4">	
 	</video>
 
-	<p>The unsteady flow field can be decomposed in a steady part (upper left) and then in a series of spatial modes ranked according to their energy content. Figure upper right and bottom left and right represent the spatial shapes, the energy content and the temporal evolution of three POD modes.</p>
-
-	<div class="row">
-  		<div class="column">
-    			<img src="../images/cylinder/Figure_0.png"  style="width:100%">
-  		</div>
-  		<div class="column">
-    			<img src="../images/cylinder/Figure_1.png"  style="width:100%">
-  		</div>
-	</div>
-
-	<div class="row">
-  		<div class="column">
-    			<img src="../images/cylinder/Figure_2.png"  style="width:100%">
-  		</div>
-  		<div class="column">
-    			<img src="../images/cylinder/Figure_3.png"  style="width:100%">
-  		</div>
-	</div>
-
-
-	<p>The main arising problem is that due to the non linear nature of the governing equations every mode interacts with all the others in a non trivial way.</p>
-	<p>We would like to leverage the capabilities of the machine learning to neglect the non necessary interactions.</p>
-	
-
-	<h1>Under the hood of Machine Learning</h1>
-
-	<p>In a nutshell machine learning is the field of computer science that "uses statistical techniques that give the machine the ability to "learn" from data
-	without being explicitly programmed"</p>	
-	
-	<h2> LASSO Regression</h2>
-		
-	<p>The main idea is to create a procedure capable to select only the most important feature that contribute in the description of a certain model. This is achieved adding to 
-	a standard least square formulation a penalisation term in the form of a $\color{black}{l1}$ norm:</p>
-	
-
-	$$\color{black}{\tilde{\beta} = \min_{\beta}{||\beta \Theta(a) - \dot{A} ||_2^2 + \lambda ||\beta||_1 }}$$
-
-
-	<p>This allows us to generate a whole family of models varying the value of the parameter $\color{black}{\lambda}$. </p>
-	<p>An interesting exercise is apply this procedure to the Lorenz system </p>
-	
-	<div class="row">
-  		<div class="column">
-
-			</br>
-			</br>
-			</br>
-			</br>
-    			$\color{black}{\LARGE \begin{eqnarray}
-  			\dot{x} &=& \sigma(y-x) \label{eq:x}\\
-  			\dot{y} &=& -xz + rx - y \label{eq:y}\\
-  			\dot{z} &=&  xy - bz \label{eq:z}
-			\end{eqnarray}}$
-  		</div>
-  		<div class="column">
-			<video style="width:100%" poster="../images/lorenz_attractor.png" controls autoplay loop>
-   				<source src="../images/lorenz_ani.mp4" type="video/mp4">	
-			</video>
-    			<!--<IMG BORDER="0" ALIGN="Right" style="width:400px;height:400px;" SRC="../images/lorenz_attractor.png" >-->
-  		</div>
-	</div>
-
-
-	<p>The system can be recast in the following way more suitable to perform regression:</p>
-	$$\color{black}{\dot{A} = \Theta(a) \beta}$$ 
-	<p>In particular: $\color{black}{\dot{A}}$ is a matrix of which every column contains the temporal story of the local acceleration $\color{black}{[\dot{X}, \dot{Y}, \dot{Z}]}$ in this case.</p> 
-	<p>$\color{black}{\Theta(a)}$ contains the temporal story of the linear and non linear interactions of the system, in this case $\color{black}{[1,X,Y,Z,X^2,XY,XZ,Y^2,YZ,Z^2]}$ </p>
-	<p>The entries of $\color{black}{\beta}$ are the degrees of freedom of the optimisation procedure, the non zero coefficients of this matrix select the interactions that contribute the most to the dynamic of a certain mode</p>
-
-	<img src="../images/Sparse_ode.png"  style="width:80%">
-	
-
-	<p>It is interesting to observe how increasing the value of the regularisation parameter $\color{black}{\lambda}$ the algorithm is able to extract only the terms of the matrix $\color{black}{\beta}$ that contribute effectively to the dynamics of the system. Moving from left to right in the left graph we can observe that the reconstruction error ( defined as $\color{black}{\frac{1}{T} \int_{T} \int_{V} ||\dot{X}_{rec} - \dot{X}_{ori}||_2^2 dxdydzdt}$ where rec is the reconstructed solution and ori the original one) doesn't change much as a lot of unnecessary term are erased from the system. An optimum number of terms, in this case, exist and it is located at the knee point of the red curve.</p>
-
-	<video src = "../images/sparse_pattern.mp4" style="width:100%" controls autoplay loop></video>
-
-	<p> The procedure must conserve the statistical properties of the original system such as probability distribution of the trajectories. An example is showed in the following figure where the trajectory of the $\color{black}{Z}$ coordinate $\color{black}{z(t)}$ for both the original system and the reconstructed one is reported.</p> 
-
-	<img src="../images/Lorenz.png"  style="width:100%">
-
-	<h1>Toy problem</h1>
-
-	<p> The whole procedure from the creation of the dataset to the feature selection is computational expensive. For this reason we chose to test the algorithm 
-	on a mono dimensional test case</p>	
-
-	<h2>Kuramoto-Sivashinsky model: 1D Turbulence</h2>
-	
-	<p> Simple one dimensional model that include a scales interaction similar to the one of a turbulent flow: the energy is injected in the biggest scales of the flow, the nonlinear interaction between modes transfer the energy from the biggest scales to the smallest ones and finally the viscosity dissipate it in the smaller scales of the flow</p>
-
-	$$\color{black}{u_t + uu_x + u_{xx} + u_{xxxx} = 0}$$
-
-	<img src="../images/ks_dynamics.png" style="width:100%">
-
-	<p>The second interesting feature of this model is that the separation between the largest scales and the smallest scales increases proportionally to the length of the computational domain</p>
+	<video style="width:80%" controls autoplay loop>
+   		<source src="../images/L2_curves.mp4" type="video/mp4">	
+	</video>
 
 	<div class="row">
   		<div class="column">
     			<!--<video src = "../images/KS_vid1.mp4" style="width:80%" controls autoplay loop></video>-->
-			<video style="width:100%" poster="../images/KS_1.png" controls autoplay loop>
-   				<source src="../images/KS_vid1.mp4" type="video/mp4">	
+			<video style="width:100%"  controls autoplay loop>
+   				<source src="../images/ROM_90.mp4" type="video/mp4">	
 			</video>
   		</div>
   		<div class="column">
     			<!--<video src = "../images/KS_vid2.mp4" style="width:80%" controls autoplay loop></video>-->
-			<video style="width:100%" poster="../images/KS_2.png" controls autoplay loop>
-   				<source src="../images/KS_vid2.mp4" type="video/mp4">	
+			<video style="width:100%"  controls autoplay loop>
+   				<source src="../images/time_integration.mp4" type="video/mp4">	
 			</video>
   		</div>
 	</div>
-	
-	<div class="row">
-  		<div class="column">
-    			<img src="../images/KS_1.png"  style="width:80%">
-  		</div>
-  		<div class="column">
-    			<img src="../images/KS_2.png"  style="width:80%">
-  		</div>
-	</div>
 
-	<p>Due to the simple geometry is possible to decompose the flow in Fourier modes (right figure)</p> 
 
-	$$\color{black}{\dot{u_k} = (k^2 - k^4) u_{k} - \frac{i}{2}k \sum_{p+q = k} {u_p u_q}}$$
-
-	<p> Then we can study the interaction between the different length scales. Moreover the already sparse structure of the Fourier representation of the flow allows to visualise all the possible non linear interactions on a simple 2D plane (left figure) where every point represent the interaction between two different wave lengths $\color{black}{u_p u_q}$.</p>
-
-	<div class="row">
-  		<div class="column">
-    			<img src="../images/FT.png"  style="width:100%">
-  		</div>
-  		<div class="column">
-    			<img src="../images/Diagram.png"  style="width:50%">
-  		</div>
-	</div>
-
-	<p>The procedure showed on the Lorenz's system can now be applied on the Kuraoto-Sivashinsky system in order to extract the sparsity pattern of the system</p>
-	<video src = "../images/KS_64.mp4" style="width:100%" controls autoplay loop></video>
-    	<p> Then it is possible to run again the simulations choosing models with different density ratio and monitor the statistical proprieties of the system.</p>
-	<p> In the following graph is reported the kinetic energy of the flow $\color{black}{E(t) = \int_V U(x,t)^2 dx}$ for two different models </p>
-	<img src="../images/Energy.png"  style="width:100%">
-	<p>The black line is the original simulation while the blue line represents a reconstructed model. Of course the two simulations are not overlapping due to the chaotic nature
-	of the system. However the average and statistical properties of the system are caught pretty well by the procedure.</p>
-
-	<p>The purpose of this page is only to give a first glimpse on the project. If you are interested in more technical details you can refer to <a href="../pdfs/PhD_9months.pdf" target="_blank">this report</a> or shoot me a mail to <a href="mailto:riru93@gmail.com" target="_top">riru93@gmail.com</a></p>
-
-	<h1>Further developments:</h1>
-	<h2>2D Lid Driven Cavity Flow</h2>
-
-	<p>The previous analysis has been performed in the framework of the Fourier analysis. This allow a very elegant way to describe the scale interaction however has as major drawback that the geometry must be periodic this avoid to describe flows in fairly complex geometries. The next step will be to extend this procedure to the framework of POD based reduced order models.</p>
-	<p>The first test case taken into analysis will be the 2D lid driven cavity flow.</p>
 
 	</article>
             </div>

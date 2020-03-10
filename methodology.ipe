@@ -1,0 +1,481 @@
+<?xml version="1.0"?>
+<!DOCTYPE ipe SYSTEM "ipe.dtd">
+<ipe version="70212" creator="Ipe 7.2.13">
+<info created="D:20200310105531" modified="D:20200310105531"/>
+<ipestyle name="basic">
+<symbol name="arrow/arc(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/farc(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/ptarc(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/fptarc(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="mark/circle(sx)" transformations="translations">
+<path fill="sym-stroke">
+0.6 0 0 0.6 0 0 e
+0.4 0 0 0.4 0 0 e
+</path>
+</symbol>
+<symbol name="mark/disk(sx)" transformations="translations">
+<path fill="sym-stroke">
+0.6 0 0 0.6 0 0 e
+</path>
+</symbol>
+<symbol name="mark/fdisk(sfx)" transformations="translations">
+<group>
+<path fill="sym-fill">
+0.5 0 0 0.5 0 0 e
+</path>
+<path fill="sym-stroke" fillrule="eofill">
+0.6 0 0 0.6 0 0 e
+0.4 0 0 0.4 0 0 e
+</path>
+</group>
+</symbol>
+<symbol name="mark/box(sx)" transformations="translations">
+<path fill="sym-stroke" fillrule="eofill">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+-0.4 -0.4 m
+0.4 -0.4 l
+0.4 0.4 l
+-0.4 0.4 l
+h
+</path>
+</symbol>
+<symbol name="mark/square(sx)" transformations="translations">
+<path fill="sym-stroke">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+</path>
+</symbol>
+<symbol name="mark/fsquare(sfx)" transformations="translations">
+<group>
+<path fill="sym-fill">
+-0.5 -0.5 m
+0.5 -0.5 l
+0.5 0.5 l
+-0.5 0.5 l
+h
+</path>
+<path fill="sym-stroke" fillrule="eofill">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+-0.4 -0.4 m
+0.4 -0.4 l
+0.4 0.4 l
+-0.4 0.4 l
+h
+</path>
+</group>
+</symbol>
+<symbol name="mark/cross(sx)" transformations="translations">
+<group>
+<path fill="sym-stroke">
+-0.43 -0.57 m
+0.57 0.43 l
+0.43 0.57 l
+-0.57 -0.43 l
+h
+</path>
+<path fill="sym-stroke">
+-0.43 0.57 m
+0.57 -0.43 l
+0.43 -0.57 l
+-0.57 0.43 l
+h
+</path>
+</group>
+</symbol>
+<symbol name="arrow/fnormal(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/pointed(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/fpointed(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/linear(spx)">
+<path stroke="sym-stroke" pen="sym-pen">
+-1 0.333 m
+0 0 l
+-1 -0.333 l
+</path>
+</symbol>
+<symbol name="arrow/fdouble(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+-1 0 m
+-2 0.333 l
+-2 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/double(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+-1 0 m
+-2 0.333 l
+-2 -0.333 l
+h
+</path>
+</symbol>
+<pen name="heavier" value="0.8"/>
+<pen name="fat" value="1.2"/>
+<pen name="ultrafat" value="2"/>
+<symbolsize name="large" value="5"/>
+<symbolsize name="small" value="2"/>
+<symbolsize name="tiny" value="1.1"/>
+<arrowsize name="large" value="10"/>
+<arrowsize name="small" value="5"/>
+<arrowsize name="tiny" value="3"/>
+<color name="red" value="1 0 0"/>
+<color name="green" value="0 1 0"/>
+<color name="blue" value="0 0 1"/>
+<color name="yellow" value="1 1 0"/>
+<color name="orange" value="1 0.647 0"/>
+<color name="gold" value="1 0.843 0"/>
+<color name="purple" value="0.627 0.125 0.941"/>
+<color name="gray" value="0.745"/>
+<color name="brown" value="0.647 0.165 0.165"/>
+<color name="navy" value="0 0 0.502"/>
+<color name="pink" value="1 0.753 0.796"/>
+<color name="seagreen" value="0.18 0.545 0.341"/>
+<color name="turquoise" value="0.251 0.878 0.816"/>
+<color name="violet" value="0.933 0.51 0.933"/>
+<color name="darkblue" value="0 0 0.545"/>
+<color name="darkcyan" value="0 0.545 0.545"/>
+<color name="darkgray" value="0.663"/>
+<color name="darkgreen" value="0 0.392 0"/>
+<color name="darkmagenta" value="0.545 0 0.545"/>
+<color name="darkorange" value="1 0.549 0"/>
+<color name="darkred" value="0.545 0 0"/>
+<color name="lightblue" value="0.678 0.847 0.902"/>
+<color name="lightcyan" value="0.878 1 1"/>
+<color name="lightgray" value="0.827"/>
+<color name="lightgreen" value="0.565 0.933 0.565"/>
+<color name="lightyellow" value="1 1 0.878"/>
+<dashstyle name="dashed" value="[4] 0"/>
+<dashstyle name="dotted" value="[1 3] 0"/>
+<dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
+<dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
+<textsize name="large" value="\large"/>
+<textsize name="Large" value="\Large"/>
+<textsize name="LARGE" value="\LARGE"/>
+<textsize name="huge" value="\huge"/>
+<textsize name="Huge" value="\Huge"/>
+<textsize name="small" value="\small"/>
+<textsize name="footnote" value="\footnotesize"/>
+<textsize name="tiny" value="\tiny"/>
+<textstyle name="center" begin="\begin{center}" end="\end{center}"/>
+<textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
+<textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
+<gridsize name="4 pts" value="4"/>
+<gridsize name="8 pts (~3 mm)" value="8"/>
+<gridsize name="16 pts (~6 mm)" value="16"/>
+<gridsize name="32 pts (~12 mm)" value="32"/>
+<gridsize name="10 pts (~3.5 mm)" value="10"/>
+<gridsize name="20 pts (~7 mm)" value="20"/>
+<gridsize name="14 pts (~5 mm)" value="14"/>
+<gridsize name="28 pts (~10 mm)" value="28"/>
+<gridsize name="56 pts (~20 mm)" value="56"/>
+<anglesize name="90 deg" value="90"/>
+<anglesize name="60 deg" value="60"/>
+<anglesize name="45 deg" value="45"/>
+<anglesize name="30 deg" value="30"/>
+<anglesize name="22.5 deg" value="22.5"/>
+<opacity name="10%" value="0.1"/>
+<opacity name="30%" value="0.3"/>
+<opacity name="50%" value="0.5"/>
+<opacity name="75%" value="0.75"/>
+<tiling name="falling" angle="-60" step="4" width="1"/>
+<tiling name="rising" angle="30" step="4" width="1"/>
+</ipestyle>
+<page>
+<layer name="alpha"/>
+<view layers="alpha" active="alpha"/>
+<path layer="alpha" matrix="1 0 0 1 -376 8" stroke="black" pen="ultrafat" arrow="normal/normal">
+416 400 m
+416 576 l
+</path>
+<path matrix="1 0 0 1 -376 8" stroke="black" pen="ultrafat" arrow="normal/normal">
+400 416 m
+576 416 l
+</path>
+<text matrix="0.6 0 0 15.2316 -182.4 -6389.16" transformations="translations" pos="544 448" stroke="black" type="label" width="63.208" height="6.926" depth="1.93" valign="baseline">First Principle</text>
+<text matrix="1 0 0 1 -376 8" transformations="translations" pos="448 552" stroke="black" type="label" width="36.53" height="6.918" depth="0" valign="baseline">Machine</text>
+<text matrix="1 0 0 1 -376 -8" transformations="translations" pos="448 552" stroke="black" type="label" width="38.356" height="6.815" depth="1.93" valign="baseline">Learning</text>
+<use matrix="1 0 0 1 -376 8" name="mark/fdisk(sfx)" pos="440 528" size="large" stroke="black" fill="black"/>
+<use matrix="1 0 0 1 -376 8" name="mark/fdisk(sfx)" pos="552 440" size="large" stroke="black" fill="black"/>
+<use matrix="1 0 0 1 -376 8" name="mark/fdisk(sfx)" pos="472 464" size="large" stroke="red" fill="red"/>
+<text matrix="1 0 0 1 -376 8" transformations="translations" pos="480 480" stroke="black" type="label" width="85.762" height="6.926" depth="1.93" valign="baseline">Proposed Approach</text>
+<text matrix="1 0 0 1 -376 8" transformations="translations" pos="448 400" stroke="black" type="label" width="64.301" height="6.918" depth="0" valign="baseline">General Model</text>
+<text matrix="1 0 0 1 -376 8" transformations="translations" pos="568 400" stroke="black" type="label" width="21.89" height="6.918" depth="0" valign="baseline">Hard</text>
+<text matrix="1 0 0 1 -384 16" transformations="translations" pos="400 576" stroke="black" type="label" width="21.89" height="6.918" depth="0" valign="baseline">Hard</text>
+<text matrix="-0.0114393 0.915958 -0.999935 -0.0104786 500.544 79.838" pos="400 464" stroke="black" type="label" width="137.429" height="6.926" depth="1.93" valign="baseline">Incorporating KNOWN physics</text>
+<text pos="160 576" stroke="black" type="label" width="12.73" height="7.473" depth="2.49" valign="baseline">(a)</text>
+<text matrix="1 0 0 1 0 16" pos="248 608" stroke="black" type="label" width="63.208" height="6.926" depth="1.93" valign="baseline">First Principle</text>
+<text pos="248 592" stroke="black" type="label" width="49.768" height="7.473" depth="2.49" valign="baseline">$\partial_t \mathbf{u} = \mathbf{F}(\mathbf{u})$</text>
+<path matrix="1 0 0 1 -8 0" stroke="black" pen="fat">
+448 600 m
+444 600 l
+444 528 l
+444 524 l
+448 524 l
+444 524 l
+</path>
+<path stroke="black" pen="fat">
+464 600 m
+468 600 l
+468 524 l
+464 524 l
+464 524 l
+</path>
+<path stroke="black" pen="fat">
+484 600 m
+480 600 l
+480 524 l
+484 524 l
+484 524 l
+</path>
+<path stroke="black" pen="fat">
+544 600 m
+548 600 l
+548 524 l
+544 524 l
+544 524 l
+</path>
+<path stroke="black" pen="fat">
+556 600 m
+552 600 l
+552 548 l
+556 548 l
+</path>
+<path stroke="black" pen="fat">
+572 600 m
+576 600 l
+576 548 l
+572 548 l
+</path>
+<path stroke="black" pen="fat">
+472 568 m
+476 568 l
+</path>
+<path stroke="black" pen="fat">
+472 564 m
+476 564 l
+</path>
+<text matrix="1 0 0 1 100 24" pos="248 568" stroke="black" type="label" width="52.639" height="8.933" depth="3.43" valign="baseline">$\frac{da_i}{dt} = \mathbf{G}(a_i)$</text>
+<path matrix="1.125 0 0 0.517241 -34 287.31" stroke="black" pen="fat">
+30 0 0 30 274 592 e
+</path>
+<path matrix="1.125 0 0 0.517241 66 287.31" stroke="black" pen="fat">
+30 0 0 30 274 592 e
+</path>
+<text matrix="1 0 0 1 -12 0" pos="352 624" stroke="black" type="label" width="67.663" height="6.918" depth="0" valign="baseline">Reduced Model</text>
+<text matrix="1 0 0 1 -8 8" pos="452 608" stroke="black" type="label" width="10.789" height="9.176" depth="1.49" valign="baseline">$\dot{A}_i$</text>
+<text matrix="1 0 0 1 -12 8" pos="508 608" stroke="black" type="label" width="26.286" height="7.473" depth="2.49" valign="baseline">$\Theta(A_i)$</text>
+<text matrix="1 0 0 1 -4 8" pos="564 608" stroke="black" type="label" width="8.952" height="6.926" depth="1.93" valign="baseline">$\beta_i$</text>
+<path matrix="1 0 0 1 -8 0" stroke="black" arrow="normal/normal">
+440 600 m
+440 524 l
+</path>
+<text matrix="-0.00504927 0.999987 -0.999987 -0.00504927 994.2 120.907" pos="436 564" stroke="black" type="label" width="17.922" height="5.999" depth="0" valign="baseline" size="small">time</text>
+<text matrix="1 0 0 1 68 76" pos="492 516" stroke="black" type="label" width="10.437" height="6.812" depth="1.49" valign="baseline">$C_i$</text>
+<text matrix="1 0 0 1 48 60" pos="512 516" stroke="black" type="label" width="13.797" height="6.808" depth="2.85" valign="baseline">$L_{ij}$</text>
+<text matrix="1 0 0 1 20 40" pos="536 516" stroke="black" type="label" width="19.296" height="6.808" depth="2.85" valign="baseline">$Q_{ijk}$</text>
+<text matrix="1 0 0 1 -12 12" pos="448 592" stroke="black" type="label" width="7.746" height="3.391" depth="1.49" valign="baseline" size="tiny">$\dot{a}_1$</text>
+<text matrix="1 0 0 1 -4 12" pos="460 592" stroke="black" type="label" width="8.743" height="3.392" depth="0.99" valign="baseline" size="tiny">$\dot{a}_n$</text>
+<path stroke="black">
+556 588 m
+572 588 l
+</path>
+<path stroke="black">
+556 568 m
+572 568 l
+</path>
+<text pos="484 604" stroke="black" type="label" width="3.39" height="3.21" depth="0" valign="baseline" size="tiny">1</text>
+<text matrix="1 0 0 1 -4 0" pos="496 604" stroke="black" type="label" width="7.746" height="2.149" depth="1.49" valign="baseline" size="tiny">$a_1$</text>
+<text pos="504 604" stroke="black" type="label" width="8.743" height="2.151" depth="0.99" valign="baseline" size="tiny">$a_n$</text>
+<text matrix="1 0 0 1 -4 0" pos="520 604" stroke="black" type="label" width="7.746" height="5.224" depth="2.79" valign="baseline" size="tiny">$a_1^2$</text>
+<text matrix="1 0 0 1 -4 0" pos="540 604" stroke="black" type="label" width="8.743" height="5.223" depth="1.99" valign="baseline" size="tiny">$a_n^2$</text>
+<path stroke="black">
+436 608 m
+444 616 l
+444 616 l
+</path>
+<path stroke="black">
+464 608 m
+456 616 l
+</path>
+<path stroke="black">
+480 608 m
+496 612 l
+</path>
+<path stroke="black">
+544 608 m
+524 612 l
+</path>
+<path stroke="black">
+552 604 m
+560 612 l
+</path>
+<path stroke="black">
+576 604 m
+568 612 l
+</path>
+<text matrix="-0.0114618 0.817285 -0.999934 -0.00936815 1019.87 168.607" pos="448 560" stroke="black" type="label" width="81.093" height="6.23" depth="1.74" valign="baseline" size="small">Temporla Dynamics</text>
+<text pos="492 564" stroke="black" type="label" width="51.557" height="6.808" depth="0" valign="baseline">Interactions</text>
+<text matrix="1 0 0 1 24 -4" pos="492 508" stroke="black" type="label" width="59.311" height="9.173" depth="2.49" valign="baseline">$\dot{A}_i = \Theta(A_i)\beta_i$</text>
+<text matrix="1 0 0 1 192 -64" pos="248 568" stroke="black" type="label" width="52.639" height="8.933" depth="3.43" valign="baseline">$\frac{da_i}{dt} = \mathbf{G}(a_i)$</text>
+<path stroke="black" pen="fat">
+420 508 m
+420 620 l
+420 620 l
+</path>
+<path stroke="black" pen="fat">
+428 628 m
+576 628 l
+</path>
+<path stroke="black" pen="fat">
+576 496 m
+428 496 l
+</path>
+<path stroke="black" pen="fat">
+420 508 m
+420 504 l
+</path>
+<path stroke="black" pen="fat">
+420 620 m
+8 0 0 -8 428 620 428 628 a
+</path>
+<path stroke="black" pen="fat">
+584 504 m
+8 0 0 -8 576 504 576 496 a
+</path>
+<path stroke="black" pen="fat">
+428 496 m
+8 0 0 -8 428 504 420 504 a
+</path>
+<path stroke="black" pen="fat">
+576 628 m
+8 0 0 -8 576 620 584 620 a
+</path>
+<path stroke="black" pen="fat">
+584 620 m
+584 504 l
+</path>
+<text matrix="1 0 0 1 -96 -8" pos="520 476" stroke="black" type="label" width="78.94" height="7.778" depth="3.79" valign="baseline" size="small">$\int_{\Omega} \mathbf{u} \cdot \mathbf{u} \cdot \nabla \mathbf{u} d\Omega = 0 $</text>
+<text matrix="1 0 0 1 28 4" pos="440 476" stroke="black" type="label" width="82.984" height="6.23" depth="1.74" valign="baseline" size="small">Physical Constraints</text>
+<text matrix="1 0 0 1 12 0" pos="528 468" stroke="black" type="label" width="36.434" height="6.23" depth="1.74" valign="baseline" size="small">$\mathbf{D}\beta_i = \mathbf{C}$</text>
+<path stroke="black" pen="fat">
+420 464 m
+420 480 l
+420 480 l
+</path>
+<path stroke="black" pen="fat">
+428 488 m
+576 488 l
+</path>
+<path stroke="black" pen="fat">
+584 480 m
+584 464 l
+</path>
+<path stroke="black" pen="fat">
+576 456 m
+428 456 l
+</path>
+<path stroke="black" pen="fat">
+420 480 m
+8 0 0 -8 428 480 428 488 a
+</path>
+<path stroke="black" pen="fat">
+576 488 m
+8 0 0 -8 576 480 584 480 a
+</path>
+<path stroke="black" pen="fat">
+584 464 m
+8 0 0 -8 576 464 576 456 a
+</path>
+<path stroke="black" pen="fat">
+428 456 m
+8 0 0 -8 428 464 420 464 a
+</path>
+<path stroke="black" pen="heavier">
+416 460 m
+416 624 l
+</path>
+<path stroke="black" pen="heavier">
+424 632 m
+580 632 l
+</path>
+<path stroke="black" pen="heavier">
+588 624 m
+588 460 l
+</path>
+<path stroke="black" pen="heavier">
+580 452 m
+424 452 l
+</path>
+</page>
+</ipe>
