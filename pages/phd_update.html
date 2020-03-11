@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script>
+  			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  			ga('create', 'UA-101267317-1', 'auto');
+  			ga('send', 'pageview');
+
+		</script>
+
+<head>
+	<style>
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 49.5%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+</style>
+
+
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <title>Sparsification techniques for Reduced Order Models of turbulent flows</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="../theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="../theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="../theme/css/code_blocks/darkly.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+                <meta property="og:locale" content="en_UK">
+		<meta property="og:site_name" content="Riccardo Rubini Personal Page">
+
+
+	<script type="text/x-mathjax-config">
+  	MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script type="text/javascript"
+  	src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://riccardorubini93.github.io/rickyrubini.github.io/">Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+			    <li class="active"><a href="phd.html" target="_blank" >My PhD</a></li>
+                            <li><a href="about-me.html" target="_blank">About Me</a></li>
+                            <!--<li><a href="contact-me.html">Contact me</a></li>-->
+                            <li><a href="experiences.html" target="_blank" >Experiences</a></li>
+                            <li><a href="junks.html" target="_blank">Junks</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+        <header class="intro-header" style="background-image: url('../images/turb.png')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Sparsification techniques for Reduced Order Models of turbulent flows</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <article>
+ 	 <p>The main purpose of this page is to give a first glimpse on the thematic I am tackling in my PhD project... This is still an ongoing research so the page is not complete. New contents will be uploaded soon! Stay tuned!</p>
+	
+	<h1>Motivation</h1>
+	
+	<p>Although Reduced Order Modelling has been successful in many appications concerning analysis and flow control one of the main limitation is still the high computational cost associated with the nonlinear term. The main objective is to develop a systematic data-driven methodology to construct sparsely-connected models of turbulent flows, capturing the underlying sparsity in the structure of energy interactions between scales.</p>
+	
+	<!--<img src="../images/DOF.png" alt="Snow" style="width:100%">-->
+			
+
+	<h1>Main Idea</h1>
+	<h2>Reduced Order Modelling</h2>
+	
+	<p>Decomposing the flow field in temporal and spatial shapes and then describe their evolution.</p>
+
+	<!--$$\color{black}{u(x,t) = U(x) + \sum_{i}^N {\phi(x) a(t)}}$$-->	
+
+	<img src="../images/ROM.png" alt="Snow" style="width:100%">
+
+
+	<p>The main problem arises from the non linear nature of the governing equations every mode interacts with all the others in a non trivial way.</p>
+	<p>We would like to leverage the capabilities of the machine learning to learn from data which terms of the model are relevant for the dynamics of the system.</p>
+	
+
+	<h2>Methodology</h2>
+
+	<p></p>	
+	
+	<img src="../images/ML_framework.png" alt="Snow" style="width:100%">
+
+	<p>It is known that the energy transfer inside a turbulent flows occours according preferential patterns. Therefore not all triadic interaction inside the tensor Q_{ijk} have the same importance. The dynamics of a certain scale depend predominantly upon the dynamics of a subset of the set of scales and the complemetary set of structures can be generally neglected with minor global effects</p>	
+
+	<img src="../images/methodology.png" alt="Snow" style="width:100%">
+
+
+	<h1>Two dymensional turbulence</h1>
+
+	<p>We applyed this methodology to the unsteady flow developing inside a lid driven cavity at Re = 20.000</p>
+
+
+	<video style="width:80%" controls autoplay loop>
+   		<source src="../images/DNS.ogv" type="video/mp4">	
+	</video>
+
+	<video style="width:80%" controls autoplay loop>
+   		<source src="../images/L2_curves.mp4" type="video/mp4">	
+	</video>
+
+	<div class="row">
+  		<div class="column">
+    			<!--<video src = "../images/KS_vid1.mp4" style="width:80%" controls autoplay loop></video>-->
+			<video style="width:100%"  controls autoplay loop>
+   				<source src="../images/ROM_90.mp4" type="video/mp4">	
+			</video>
+  		</div>
+  		<div class="column">
+    			<!--<video src = "../images/KS_vid2.mp4" style="width:80%" controls autoplay loop></video>-->
+			<video style="width:100%"  controls autoplay loop>
+   				<source src="../images/time_integration.mp4" type="video/mp4">	
+			</video>
+  		</div>
+	</div>
+
+
+
+	</article>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=100009488021331" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/RiccardoRubini93" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/riccardo-rubini-095100133/" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com" target="_blank">Pelican</a>,
+    which takes great advantage of <a href="http://python.org" target="_blank">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="../theme/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="../theme/js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
