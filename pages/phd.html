@@ -127,64 +127,75 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <article>
  	 <p>The main purpose of this page is to give a first glimpse on the thematic I am tackling in my PhD project... This is still an ongoing research so the page is not complete. New contents will be uploaded soon!</p>
-	
+
 	<h1>Motivation</h1>
-	
+
 	<p>Although Reduced Order Modelling has been successful in many applications concerning analysis and flow control. Still, one of the main limitation is still the high computational cost associated with the nonlinear term. The main objective is to develop a systematic data-driven methodology to construct sparsely-connected models of turbulent flows, capturing the underlying sparsity in the structure of energy interactions between scales.</p>
-	
+
 	<!--<img src="../images/DOF.png" alt="Snow" style="width:100%">-->
-			
+
 
 	<h1>Main Idea</h1>
 	<h2>Reduced Order Modelling</h2>
-	
-	<p>Decomposing the flow field in temporal and spatial shapes and then describe their evolution.</p>
 
-	<!--$$\color{black}{u(x,t) = U(x) + \sum_{i}^N {\phi(x) a(t)}}$$-->	
+	<p>A successful approach to tackle high complexity flow is to decompose the field into spatial and temporal modes that satisfy certain properties. Then, as displayed in figure (1) the governnig equation are
+  projected onto the subspace spanned by a subset of these modes. As a result the original system is equivalent to a set of coupled ODEs.
+  As shown in the last panel of figure (1) the system is composed by a constant, linear and quadratic term coresponding to the pressure, viscous and convective term in the Navire-Stokes equations.
+  A popular approach is projecting the Navier-Stokes equation onto the subspace spanned by the POD modes. </p>
+
+	<!--$$\color{black}{u(x,t) = U(x) + \sum_{i}^N {\phi(x) a(t)}}$$-->
 
 	<figure>
 		<img src="../images/ROM.png" alt="Snow" style="width:100%">
     	<figcaption>Fig.1 - Generation of the Reduced Order Model (ROM) from first principle and the corresponding realization.</figcaption>
     </figure>
 
-	<p>The main problem arises from the non linear nature of the governing equations every mode interacts with all the others in a non trivial way.</p>
-	<p>We would like to leverage the capabilities of the machine learning to learn from data which terms of the model are relevant for the dynamics of the system.</p>
-	
+	<p>The main limitation of this approach arises from the non linear nature of the governing equations every mode interacts with all the others in a non trivial way. This makes the tensor
+  <span lang="latex">$\color{black}{Q_{ijk}}$</span> dense producing computationally expensive models with an underlying physics of difficult interpretation.</p>
+
+  <p>Our main goal is to integrate the machine learning framework in the process of generating the Reduced Order Model to lear from data which terms are truly relevant for the dynamics.
+  This is the key enabler to obtain a family of computationally efficients and easily interpretable models that contains only the necessary physics.</p>
+
 
 	<h2>Methodology</h2>
 
-	<p>In a nutshell machine learning is the field of computer science that "uses statistical techniques that give the machine the ability to "learn" from data without being explicitly programmed. Figure 2 shows an overview on the possible machine learning techniques. The proposed approach aims to couple modal decomposition techniques and regression technique to automatically generate from data models where only the important features of turbulence are retained</p>	
-	
+	<p>In a nutshell machine learning is the field of computer science that "uses statistical techniques that give the machine the ability to "learn" from data without being explicitly programmed.
+    Figure (2) shows an overview on the possible machine learning techniques. The proposed approach aims to couple modal decomposition techniques and regression technique to automatically generate
+    from data models where only the important features of turbulence are retained</p>
+
 	<figure>
 		<img src="../images/ML_framework.png" alt="Snow" style="width:100%">
 		<figcaption>Fig.2 - Overview of possible machine learning techniques. The proposed approach couples two techniques belonging to supervised and unsupervised learning respectively.</figcaption>
     </figure>
 
 	<p>It is known that the energy transfer inside a turbulent flows occurs according preferential patterns. Therefore not all triadic interaction have the same importance. The dynamics of a certain scale depend predominantly upon the dynamics of a subset of the set of scales and the complementary set of structures can be generally neglected with minor global effects</p>
-	<p>Figure 2 a) shows that this work can be located in between a pure Machine Learning approach (very effective with complex systems but poorly generalizable) and a first principle approach (very general but difficult to use in case of complex physics). We aim to bridge the gap between this two diametrically opposite approaches.</p>	
+	<p>Figure 3 (a) shows that this work can be located in between a pure Machine Learning approach (very effective with complex systems but poorly generalizable) and a first
+     principle approach (very general but difficult and expensive to use in case of complex physics).
+    We aim to bridge the gap between this two diametrically opposite approaches.</p>
 
 	<figure>
 	<img src="../images/methodology.png" alt="Snow" style="width:100%">
     <figcaption>Fig.3 - The proposed approach can be located in between a pure data driven approach (Machine Learning) and a model based ones (First Principle) as shown in panel (a). Panel b) shows the set up of the sparse regression with the integration of physical constraints (3) to generate the sparse model.</figcaption>
     </figure>
 
-    
+
     <p>Figure 3 (b) shows a sketch of the step needed to set up our framework. They can be summarized as follow.</p>
 		<ol>
-  			<li>First principle to generate the dataset</li>
-  			<li>Projection of the first  principle onto an optimal subspace generated by the dataset as shown in figure 1)</li>
-  			<li>The reduced order model can be rearranged in a matrix form suitable to perform regression. In addition, we add a linear relation between the coefficients of the system to preserve the physics of the system. In this case we ensure that the nonlinear term in the system is energy preserving as the nonlinear term in the Navier-Stokes equations.</li>
+  			<li>Fully resolved simulation to generate the dataset</li>
+  			<li>Projection of the governing equations onto an optimal subspace generated by modal decomposition as shown in figure (1)</li>
+  			<li>The reduced order model can be rearranged in a matrix form suitable to perform regression. In addition, to preserve the physics of the original system we add a linear relation
+          between the coefficients. In this case, we ensure that the nonlinear term in the system is energy preserving as the original nonlinear term in the Navier-Stokes equations.</li>
   			<li>We solve the regression problem with a <span lang="latex">$\color{black}{l_1}$</span> penalization of the coefficients. The <span lang="latex">$\color{black}{l_1}$</span> norm encourage the sparsity of the solutions retaining only the relevant terms of the system.</li>
-  			<li>The sparse system has been generated</li>
+  			<li>A whole family of sparse systems has been generated that can be used for analysis or flow control</li>
 		</ol>
 
 	<h1>Two dimensional turbulence</h1>
 
-	<p>We applyed this methodology to the unsteady flow developing inside a lid driven cavity at Re = 20.000. Panel 4) shows an animation of the magnitude of the velocity field. We observe that, despite the simple geometry, the flow field presents complex flow features such recirculation zones in the corners of the cavity and a strong shear layer. These features make this problem a good test bed for the proposed methodology.</p>
+	<p>As demonstration, we applyed this methodology to the unsteady flow developing inside a lid driven cavity at Re = 20.000. Panel (4) shows an animation of the magnitude of the velocity field. We observe that, despite the simple geometry, the flow field presents complex flow features such recirculation zones in the corners of the cavity and a strong shear layer. These features make this problem a good test bed for the proposed methodology.</p>
 
 
 	<video  style="width:80%" controls autoplay loop>
-   		<source src="../images/DNS.ogv" type="video/mp4">	
+   		<source src="../images/DNS.ogv" type="video/mp4">
 	</video>
 	<figcaption>Panel 4 - Velocity Magnitude flow blue (low) to red (high)</figcaption>
 
@@ -197,37 +208,41 @@
 
 
 	<video style="width:80%" controls autoplay loop>
-   		<source src="../images/L2_curves.mp4" type="video/mp4">	
+   		<source src="../images/L2_curves.mp4" type="video/mp4">
 	</video>
 	<figcaption>Panel 5 - Sparsification curve in a sparsity reconstruction error plane. Every point corresponds to a different model obtained with a different value of the regularisation weight. </figcaption>
 
-	<p>Figure 5) shows the sparsification obtained solving the LASSO problem for increasing values of the regularization weight. Interestingly we observe the presence of a large flat part for high value of the density of system. This means that is possible to eliminate many terms from the system without affecting the reconstruction error.
-	In addition, we can identify an optimally sparse system that present low density and low value of the reconstruction error.</p>
+	<p>Figure (5) shows the sparsification obtained solving the LASSO problem for increasing values of the regularization weight. Interestingly we observe the presence of a large flat part for high value of the density of system. This means that is possible to eliminate many terms from the system without affecting the reconstruction error.
+	In addition, we can identify an optimally sparse system, in this case retaining only 15% of the coefficients (<span lang="latex">$\color{black}{\rho /sim 0.15}</span>), that present low density and low value of the reconstruction error.</p>
 	<p>We now analyze the performance of a optimally sparse model obtained with a value of the regularization weight that we will indicate as optimal <span lang="latex">$\color{black}{\gamma}$</span>.</p>
 
 	<div class="row">
   		<div class="column">
     			<!--<video src = "../images/KS_vid1.mp4" style="width:80%" controls autoplay loop></video>-->
     			<video style="width:100%"  controls autoplay loop>
-   				<source src="../images/time_integration.mp4" type="video/mp4">	
+   				<source src="../images/time_integration.mp4" type="video/mp4">
 			</video>
-			
+
 			<figcaption>Panel 6 - Comparison between the predicted turbulent kinetic energy for the dense model and the sparse model.</figcaption>
   		</div>
   		<div class="column">
     			<!--<video src = "../images/KS_vid2.mp4" style="width:80%" controls autoplay loop></video>-->
 			<video style="width:100%"  controls autoplay loop>
-   				<source src="../images/ROM_90.mp4" type="video/mp4">	
+   				<source src="../images/ROM_90.mp4" type="video/mp4">
 			</video>
 			<figcaption> Panel 7 - Velocity Magnitude predicted by the sparse model. </figcaption>
   		</div>
 	</div>
 
-	<p>Panel 6) shows the comparison between the sparse and the dense ROM displaying the temporal evolution of the turbulent kinetic energy defined as:</p>
+	<p>Panel (6) shows the comparison between the sparse and the dense ROM displaying the temporal evolution of the turbulent kinetic energy defined as:</p>
 
 	 $$\color{black}{E(t) = \frac{1}{2}\int_{\Omega} \mathbf{u}^{\prime}(t,\mathbf{x})^2  d\Omega}$$
 
-	 <p>The dense model has been generated applying model order reduction (Figure 1) to the train dataset while the sparse model is generated applying the procedure explained in figure 3 on the training dataset. We observe that the sparsification procedure introducing physical constraints in the model is able to correctly reproduce the level of turbulent kinetic energy in the system. On the other hand, the dense model obtained solely from data overshoots its value.</p>
+	 <p>The dense model has been generated applying model order reduction (Figure 1) to the training dataset while the sparse model is generated applying the procedure explained in figure (3) on the same dataset.
+     We observe that the sparsification procedure introducing physical constraints in the model is able to correctly extimate the level of turbulent kinetic energy in the system. On the other hand, the dense model obtained solely modal decomposition
+     and Galerkin projection tends to overshoot its value.
+     To conclude this example panel (7) shows the result of the time integration of the sparse system. From visual inspection we observe that the optimally sparse model reproduces the flow
+     features of the original DNS with a reduced number of interactions.</p>
 
 	 <h1>Ongoing Work</h1>
 
@@ -235,7 +250,7 @@
 
 	 <h2>Three Dimensional Turbulence</h2>
 
-	 <p>We are applying our framework to a three dimensional turbulent flow where the interactions between flow structure are local. The main target of this analysis is to show if and how it is possible to exploit the locality of the interactions to generated more and more sparse models as the Reynolds number increases but keeping, at the same time, an approximately constant reconstruction error</p> 
+	 <p>We are applying our framework to a three dimensional turbulent flow where the interactions between flow structure are local. The main target of this analysis is to show if and how it is possible to exploit the locality of the interactions to generated more and more sparse models as the Reynolds number increases but keeping, at the same time, an approximately constant reconstruction error</p>
 
 	 <h2>Sparse Interacting Decomposition SID</h2>
 
