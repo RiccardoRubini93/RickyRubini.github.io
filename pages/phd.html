@@ -130,12 +130,25 @@
 
 	<h1>Motivation</h1>
 
-	<p>Although Reduced Order Modelling has been successful in many applications concerning analysis and flow control. Still, one of the main limitation is still the high computational cost associated with the nonlinear term. The main objective is to develop a systematic data-driven methodology to construct sparsely-connected models of turbulent flows, capturing the underlying sparsity in the structure of energy interactions between scales.</p>
+  <p>In the classical description of developed turbulent flows energy is transferred across the hierarchy of coherent structures via nonlinear triadic interactions.
+  Implicit in this picture is the fact that not all interactions have the same importance, but they occur in preferential patterns.
+  Evidence points out that the nonlinear interaction pattern among coherent structures is sparse</p>
 
-	<!--<img src="../images/DOF.png" alt="Snow" style="width:100%">-->
+  <p>Mathematically we can visualise each structure as a point in your graph and each interactions as an edge connecting two points. And so if the two structures are interacting
+  there is a non-zero value in the matrix that describes the graph of the energetic interactions.</p>
+
+  	<img src="../img/graph.png" alt="graph" style="width:100%">
+
+  <p>The last sentence translated in the Machine Learning framework where a structure is represented as a dymension of the system sums up to : you need a non-zero value when two dymensions
+  interacts between each others.</p>
+
+  <p> Therefore, you should ask yourself.... Are all the dymensions of my input vector interacting with all the others?</p>
+  <p> Or in a broader sense.....</p>
+
+	<img src="../img/header.png" alt="Motivation" style="width:100%">
 
 
-	<h1>Main Idea</h1>
+	<h1>Methodology</h1>
 	<h2>Reduced Order Modelling</h2>
 
 	<p>A successful approach to tackle high complexity flow is to decompose the field into spatial and temporal modes that satisfy certain properties. Then, as displayed in figure (1) the governnig equation are
@@ -157,7 +170,7 @@
   This is the key enabler to obtain a family of computationally efficients and easily interpretable models that contains only the necessary physics.</p>
 
 
-	<h2>Methodology</h2>
+	<h2>Sparsification of ROMs</h2>
 
 	<p>In a nutshell machine learning is the field of computer science that "uses statistical techniques that give the machine the ability to "learn" from data without being explicitly programmed.
     Figure (2) shows an overview on the possible machine learning techniques. The proposed approach aims to couple modal decomposition techniques and regression technique to automatically generate
