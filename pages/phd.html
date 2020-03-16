@@ -134,16 +134,16 @@
   Implicit in this picture is the fact that not all interactions have the same importance, but they occur in preferential patterns.
   Evidence points out that the nonlinear interaction pattern among coherent structures is sparse</p>
 
-  <p>Mathematically we can visualise each structure as a point in your graph and each interactions as an edge connecting two points. And so if the two structures are interacting
-  there is a non-zero value in the matrix that describes the graph of the energetic interactions.</p>
+  <p>Mathematically we can visualise each structure as a point in a graph and each interactions as an edge connecting two different points. Therefore, if the two structures are interacting
+   a non-zero value in the matrix that describes the graph of the energetic interactions is present.</p>
 
   	<img src="../img/graph.png" alt="graph" style="width:100%">
 
-  <p>The last sentence translated in the Machine Learning framework where a structure is represented as a dymension of the system sums up to : you need a non-zero value when two dymensions
+  <p>The last sentence translated in the Machine Learning framework where a structure is represented as a dimension of the system sums up to : you need a non-zero value when two dimensions
   interacts between each others.</p>
 
-  <p> Therefore, you should ask yourself.... Are all the dymensions of my input vector interacting with all the others?</p>
-  <p> Or in a broader sense.....</p>
+  <p> Therefore, you should ask yourself... Are all the dimensions of my input vector interacting with all the others?</p>
+  <p> Or in a broader sense...</p>
 
 	<img src="../img/header.png" alt="Motivation" style="width:100%">
 
@@ -151,23 +151,23 @@
 	<h1>Methodology</h1>
 	<h2>Reduced Order Modelling</h2>
 
-	<p>A successful approach to tackle high complexity flow is to decompose the field into spatial and temporal modes that satisfy certain properties. Then, as displayed in figure (1) the governnig equation are
+	<p>A successful approach to tackle high complexity flow is to decompose the field into spatial and temporal modes that satisfy certain properties. Then, as displayed in figure (1) the governing equation are
   projected onto the subspace spanned by a subset of these modes. As a result the original system is equivalent to a set of coupled ODEs.
-  As shown in the last panel of figure (1) the system is composed by a constant, linear and quadratic term coresponding to the pressure, viscous and convective term in the Navire-Stokes equations.
-  A popular approach is projecting the Navier-Stokes equation onto the subspace spanned by the POD modes. </p>
+  As shown in the last panel of figure (1) the system is composed by a constant, linear and quadratic term corresponding to the pressure, viscous and convective term in the Navier-Stokes equations.
+  A popular approach is projecting the governing equations onto the subspace spanned by the POD modes. </p>
 
 	<!--$$\color{black}{u(x,t) = U(x) + \sum_{i}^N {\phi(x) a(t)}}$$-->
 
 	<figure>
 		<img src="../images/ROM.png" alt="Snow" style="width:100%">
-    	<figcaption>Fig.1 - Generation of the Reduced Order Model (ROM) from first principle and the corresponding realization.</figcaption>
+    	<figcaption>Fig.1 - Generation of the Reduced Order Model (ROM) from first principle and the corresponding realisation.</figcaption>
     </figure>
 
-	<p>The main limitation of this approach arises from the non linear nature of the governing equations every mode interacts with all the others in a non trivial way. This makes the tensor
-  <span lang="latex">$\color{black}{Q_{ijk}}$</span> dense producing computationally expensive models with an underlying physics of difficult interpretation.</p>
+	<p>The main limitation of this approach arises from the non linear nature of the system where every mode interacts with all the others in a non trivial way. This makes the tensor
+  <span lang="latex">$\color{black}{Q_{ijk}}$</span> dense producing computationally expensive models with an hindering the underlying physics.</p>
 
-  <p>Our main goal is to integrate the machine learning framework in the process of generating the Reduced Order Model to lear from data which terms are truly relevant for the dynamics.
-  This is the key enabler to obtain a family of computationally efficients and easily interpretable models that contains only the necessary physics.</p>
+  <p>Our main goal is to integrate the machine learning framework in the process of generating the Reduced Order Model and learning from data which terms are truly relevant for the dynamics.
+  We believe that this could be the key enabler to obtain a family of computationally efficient and easily interpretable models that contains only the necessary physics.</p>
 
 
 	<h2>Sparsification of ROMs</h2>
@@ -182,7 +182,7 @@
     </figure>
 
 	<p>It is known that the energy transfer inside a turbulent flows occurs according preferential patterns. Therefore not all triadic interaction have the same importance. The dynamics of a certain scale depend predominantly upon the dynamics of a subset of the set of scales and the complementary set of structures can be generally neglected with minor global effects</p>
-	<p>Figure 3 (a) shows that this work can be located in between a pure Machine Learning approach (very effective with complex systems but poorly generalizable) and a first
+	<p>Figure 3 (a) shows how our idea can be located in between a pure Machine Learning approach (very effective with complex systems but poorly generalise) and a first
      principle approach (very general but difficult and expensive to use in case of complex physics).
     We aim to bridge the gap between this two diametrically opposite approaches.</p>
 
@@ -194,11 +194,11 @@
 
     <p>Figure 3 (b) shows a sketch of the step needed to set up our framework. They can be summarized as follow.</p>
 		<ol>
-  			<li>Fully resolved simulation to generate the dataset</li>
+  			<li>Fully resolved simulation to generate the data-set</li>
   			<li>Projection of the governing equations onto an optimal subspace generated by modal decomposition as shown in figure (1)</li>
   			<li>The reduced order model can be rearranged in a matrix form suitable to perform regression. In addition, to preserve the physics of the original system we add a linear relation
           between the coefficients. In this case, we ensure that the nonlinear term in the system is energy preserving as the original nonlinear term in the Navier-Stokes equations.</li>
-  			<li>We solve the regression problem with a <span lang="latex">$\color{black}{l_1}$</span> penalization of the coefficients. The <span lang="latex">$\color{black}{l_1}$</span> norm encourage the sparsity of the solutions retaining only the relevant terms of the system.</li>
+  			<li>We solve the regression problem with a <span lang="latex">$\color{black}{l_1}$</span> penalisation of the coefficients. The <span lang="latex">$\color{black}{l_1}$</span> norm encourage the sparsity of the solutions retaining only the relevant terms of the system.</li>
   			<li>A whole family of sparse systems has been generated that can be used for analysis or flow control</li>
 		</ol>
 
@@ -216,7 +216,7 @@
 
 	$$\color{black}{ \hat{{\boldsymbol \beta}}_i = \underset{{\boldsymbol \beta}_i}{\mathrm{argmin}} \left \{  ||{\boldsymbol \Theta}(A) {\boldsymbol \beta}_i - \dot{A}_i||_2^2 +  \gamma||{\boldsymbol \beta}_i||_1 \right \}, \quad \quad i=1,...,N}$$
 
-	<p>This is composed by a least-squares problem that minimize the error of the reconstructed solution with respect the target and a <span lang="latex">$\color{black}{l_1}$</span> penalization term that encourages the sparsity of the corresponding solution. The relative importance between this two terms is weighted by the regularization weight indicated as <span lang="latex">$\color{black}{\gamma}$</span>. It is not possible to set a priori the value of the regularization weight so we varied during the analysis generating a family of models with different sparsity/accuracy trade-off and plotting them model on a sparsity accuracy plane.
+	<p>This is composed by a least-squares problem that minimise the error of the reconstructed solution with respect the target and a <span lang="latex">$\color{black}{l_1}$</span> penalisation term that encourages the sparsity of the corresponding solution. The relative importance between this two terms is weighted by the regularisation weight indicated as <span lang="latex">$\color{black}{\gamma}$</span>. It is not possible to set a priori the value of the regularisation weight so we varied during the analysis generating a family of models with different sparsity/accuracy trade-off and plotting them model on a sparsity accuracy plane.
 	Ideally, the optimal model is the one with low density (corresponding to a reduced number of coefficients) and low prediction accuracy.</p>
 
 
@@ -225,9 +225,9 @@
 	</video>
 	<figcaption>Panel 5 - Sparsification curve in a sparsity reconstruction error plane. Every point corresponds to a different model obtained with a different value of the regularisation weight. </figcaption>
 
-	<p>Figure (5) shows the sparsification obtained solving the LASSO problem for increasing values of the regularization weight. Interestingly we observe the presence of a large flat part for high value of the density of system. This means that is possible to eliminate many terms from the system without affecting the reconstruction error.
+	<p>Figure (5) shows the sparsification obtained solving the LASSO problem for increasing values of the regularisation weight. Interestingly we observe the presence of a large flat part for high value of the density of system. This means that is possible to eliminate many terms from the system without affecting the reconstruction error.
 	In addition, we can identify an optimally sparse system, in this case retaining only 15% of the coefficients (<span lang="latex">$\color{black}{\rho \sim 0.15}$</span>), that present low density and low value of the reconstruction error.</p>
-	<p>We now analyze the performance of a optimally sparse model obtained with a value of the regularization weight that we will indicate as optimal <span lang="latex">$\color{black}{\gamma}$</span>.</p>
+	<p>We now analyse the performance of a optimally sparse model obtained with a value of the regularisation weight that we will indicate as optimal <span lang="latex">$\color{black}{\gamma}$</span>.</p>
 
 	<div class="row">
   		<div class="column">
@@ -252,7 +252,7 @@
 	 $$\color{black}{E(t) = \frac{1}{2}\int_{\Omega} \mathbf{u}^{\prime}(t,\mathbf{x})^2  d\Omega}$$
 
 	 <p>The dense model has been generated applying model order reduction (Figure 1) to the training dataset while the sparse model is generated applying the procedure explained in figure (3) on the same dataset.
-     We observe that the sparsification procedure introducing physical constraints in the model is able to correctly extimate the level of turbulent kinetic energy in the system. On the other hand, the dense model obtained solely modal decomposition
+     We observe that the sparsification procedure introducing physical constraints in the model is able to correctly estimate the level of turbulent kinetic energy in the system. On the other hand, the dense model obtained solely modal decomposition
      and Galerkin projection tends to overshoot its value.
      To conclude this example panel (7) shows the result of the time integration of the sparse system. From visual inspection we observe that the optimally sparse model reproduces the flow
      features of the original DNS with a reduced number of interactions.</p>
