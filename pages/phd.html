@@ -263,13 +263,22 @@
 
 	 <h2>Three Dimensional Turbulence</h2>
 
-	 <p>We are applying our framework to a three dimensional turbulent flow where the interactions between flow structure are local. The main target of this analysis is to show if and how it is possible to exploit the locality of the interactions to generated more and more sparse models as the Reynolds number increases but keeping, at the same time, an approximately constant reconstruction error</p>
+	 <p>We are applying our framework to a three dimensional turbulent flow where the interactions between flow structure are local.
+     The main target of this analysis is to show if and how it is possible to exploit the locality of the interactions to generated more and more sparse models as the Reynolds number increases but keeping,
+     at the same time, an approximately constant reconstruction error</p>
 
 	 <h2>Sparse Interacting Decomposition SID</h2>
 
 	 <p>We observe that the physics of a turbulent flow is intrinsically sparse since a given structure interacts only with a small subset of all the other structures. However, classical reduction order techniques are not able to incorporate this sparsity. We are able to restore this sparsity with a posteriori procedure performed on the dense ROM.
-	 The main idea behind the SID decomposition is to generate a modal decomposition whose spatial modes incorporate a priori the sparsity of turbulent flows generating then a ROM that present already sparsity features.
-Details about the methodology and the implementation are explained in the <a href="../pdfs/Paper3_AprioriSparsification.pdf" target="_blank">draft</a> of the upcoming paper.
+	 The main idea behind the SID decomposition is to generate a modal decomposition whose spatial modes incorporate a priori the sparsity of turbulent flows generating then a ROM that present already sparsity features.</p>
+
+   <figure>
+     <img src="../images/Apriori_vs_Aposteriori.png" alt="Snow" style="width:100%">
+    <figcaption>Schematic comparison between a posteriori sparsification in the blue sqaure and a priori sparsification in the red square.</figcaption>
+    </figure>
+
+   <p>Details about the methodology and the implementation are explained in the <a href="../pdfs/Paper3_AprioriSparsification.pdf" target="_blank">draft</a> of the upcoming paper.
+   <!--<embed src="../pdfs/Paper3_AprioriSparsification.pdf" width="800px" height="800px" />-->
 	 </p>
 
 	</article>
