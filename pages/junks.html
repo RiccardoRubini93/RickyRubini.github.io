@@ -209,10 +209,48 @@
             <li>
                 <p><a href="../pdfs/ANN_class.py">Artificial Neural Network</a> to perform clustering and classification.</p>
                 <img src="../images/NN_class.png" alt="Neural Network architecture for 2-D classification">
-                The charateristic aboout the topology of the net can be specified in the class Config. The plot of the architecture can be generated with the following config <a href = "../pdfs/NN_class_draw.txt" target="blank">file</a> and with the prompt command expained in the previous section.
+                <p>The charateristic aboout the topology of the net can be specified in the class Config. The plot of the architecture can be generated with the following config <a href = "../pdfs/NN_class_draw.txt" target="blank">file</a> and with the prompt command expained in the previous section.</p>
                 <video src = "../pdfs/ANN_class.mp4" width="520" height="440" controls autoplay loop></video>
             </li>
         </ul>
+
+
+		<h2>DyNN</h2>
+
+		<p>Small sofware package that teaches at a Deep Neural Network how to learn a non-linear dynamical system, Lorenz system in this case. At an high level this procedure can be summarised in three steps</p>
+		<p>(1): Create a training set integrating the Lorenz system from N = 10 randomly chosen initial conditions.</p>
+
+		<div class="row">
+  		<div class="column">
+    			<!--<video src = "../images/KS_vid1.mp4" style="width:80%" controls autoplay loop></video>-->
+    			<video style="display:block; margin: 0 auto;" style="width:50%"  controls autoplay loop>
+   				<source src="../images/lorenz_attractor_short.mp4" type="video/mp4">
+			</video>
+			<figcaption>Step 1: true evolution of the Lorenz system for 10 different initial conditions.</figcaption>
+  		</div>
+
+		<p>(2) Train the NN feeding the input and the output layer with the time evolution at t and t+dt, respectively.</p>
+
+		 <div class="column"> 		
+				<img style="width:100%" src="../images/nn.svg" alt="Dy Neural Network ">
+                <figcaption>NN used for this example</figcaption>
+		</div>
+		
+
+		<p>(3): Once the NN is trained one can use to integrate the system of dt obtaining a dynamics that evolves in the same phase space region of the true one.</p>
+
+		<div class="column">
+    			<!--<video src = "../images/KS_vid2.mp4" style="width:80%" controls autoplay loop></video>-->
+			<video style="display:block; margin: 0 auto;" width="550" height="450"  controls autoplay loop>
+   				<source src="../images/Lorenz_DyNN.mp4" type="video/mp4">
+			</video>
+			<figcaption> DyNN trajectory (in blue) against one used for the training (in red)</figcaption>
+  		</div>
+	</div>
+
+	<p>The application to the Lorenz system is triavial, however this methodology could have interesting applications where the non-linear dynamics of the system is not known.</p>
+    <p>Code available on <a href="https://github.com/RiccardoRubini93" target="_blank">GITHUB</a></p>
+
 
     </article>
             </div>
