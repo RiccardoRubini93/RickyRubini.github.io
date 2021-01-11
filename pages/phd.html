@@ -220,7 +220,7 @@
 	Ideally, the optimal model is the one with low density (corresponding to a reduced number of coefficients) and low prediction accuracy.</p>
 
 
-	<video style="width:80%" controls autoplay loop>
+	<video style="display:block; margin: 0 auto;" style="width:80%" controls autoplay loop>
    		<source src="../images/L2_curves.mp4" type="video/mp4">
 	</video>
 	<figcaption>Panel 5 - Sparsification curve in a sparsity reconstruction error plane. Every point corresponds to a different model obtained with a different value of the regularisation weight. </figcaption>
@@ -276,6 +276,24 @@
      <img src="../images/Apriori_vs_Aposteriori.png" alt="Snow" style="width:100%">
     <figcaption>Schematic comparison between a posteriori sparsification in the blue sqaure and a priori sparsification in the red square.</figcaption>
     </figure>
+
+    <p>With this a priori methodology I'm currently analysing the separated flow over a
+    backward facing step.</p>
+
+    <video style="width:80%" controls autoplay loop>
+     		<source src="../images/step.mp4" type="video/mp4">
+  	</video>
+  	<figcaption>Vorticity over a backward facing step.</figcaption>
+
+    <p>Interestingly, this open flows has a strong advective nature displaying strong vortex shedding phenomena.
+    The idea consists in finding out if the a priori sparsification can identify interesting flow structures.</p>
+
+    <video style="width:80%" controls autoplay loop>
+     		<source src="../images/Interactions.mp4" type="video/mp4">
+  	</video>
+  	<figcaption>Identified triadic interactions for the fist mode (a) and temporal evolution of the first two modes (b).</figcaption>
+
+    <p> New contents to come....</p>
 
    <p>Details about the methodology and the implementation are explained in the <a href="../pdfs/Paper3_AprioriSparsification.pdf" target="_blank">draft</a> of the upcoming paper.
    <!--<embed src="../pdfs/Paper3_AprioriSparsification.pdf" width="800px" height="800px" />-->
