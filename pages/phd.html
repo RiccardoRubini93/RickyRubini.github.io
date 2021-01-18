@@ -263,13 +263,13 @@
 
 	 <h1>Ongoing Work</h1>
 
-	The last part of the research will be dedicated to two works in parallel. The first is extend and further validate the framework presented for the two cavity flow to a three dimensional test case. The second is the development of the Sparse Interacting Decomposition (SID).
+	<!--The last part of the research will be dedicated to two works in parallel. The first is extend and further validate the framework presented for the two cavity flow to a three dimensional test case. The second is the development of the Sparse Interacting Decomposition (SID).
 
 	 <h2>Three Dimensional Turbulence</h2>
 
 	 <p>We are applying our framework to a three dimensional turbulent flow where the interactions between flow structure are local.
      The main target of this analysis is to show if and how it is possible to exploit the locality of the interactions to generated more and more sparse models as the Reynolds number increases but keeping,
-     at the same time, an approximately constant reconstruction error</p>
+     at the same time, an approximately constant reconstruction error</p>-->
 
 	 <h2>Sparse Interacting Decomposition SID</h2>
 
@@ -283,21 +283,36 @@
 
     <p>With this a priori methodology I'm currently analysing the separated flow over a
     backward facing step.</p>
+    <p> </p>
 
-    <video style="width:100%" controls autoplay loop>
-     		<source src="../images/step.mp4" type="video/mp4">
-        <source src="../images/step.ogg" type="video/ogg">
-  	</video>
-  	<figcaption>Vorticity field over a backward facing step.</figcaption>
+    <figure>
+      <img src="../images/Framework.png" alt="Snow" style="width:100%">
+     <figcaption>Schematic of hte framework utilised to tackle configurations with complex geometries</figcaption>
+     </figure>
+
 
     <p>Interestingly, this open flows has a strong advective nature displaying strong vortex shedding phenomena.
     The idea consists in finding out if the a priori sparsification can identify interesting flow structures.</p>
 
-    <video style="width:100%" controls autoplay loop>
-     		<source src="../images/Interactions.mp4" type="video/mp4">
-          <source src="../images/Interactions.ogg" type="video/ogg">
-  	</video>
-  	<figcaption>Identified triadic interactions for the fist mode (a) and temporal evolution of the first two modes (b).</figcaption>
+    <div class="row">
+    		<div class="column">
+      			<!--<video src = "../images/KS_vid1.mp4" style="width:80%" controls autoplay loop></video>-->
+      			<video style="width:70%"  controls autoplay loop>
+     				     <!--<source src="../images/time_integration.mp4" type="video/mp4">-->
+                   <source src="../images/Q.ogv" type="video/ogg">
+  			    </video>
+
+  			<figcaption>Q-criterion displaying the vortex shdding in the shear layers</figcaption>
+    		</div>
+    		<div class="column">
+      			<!--<video src = "../images/KS_vid2.mp4" style="width:80%" controls autoplay loop></video>-->
+  			<video style="width:100%"  controls autoplay loop>
+     				<source src="../images/step_DyNN.mp4" type="video/mp4">
+            <source src="../images/step_DyNN.ogg" type="video/ogg">
+  			</video>
+  			<figcaption> Turbulent kinetic energy for the training dataset (in black) and the prediction from the sparse system (in red)</figcaption>
+    		</div>
+  	</div>
 
     <p> New contents to come....</p>
 
