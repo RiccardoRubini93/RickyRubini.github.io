@@ -291,19 +291,38 @@
 
     <p>With this a priori methodology I'm currently analysing the separated flow over a
     backward facing step.</p>
-    <p>In addition, the figure below shows the framework developed to manage flows in compelx geometries with arbitrary mesh structures.
-    The framework developed heavily rely on <a href="https://github.com/IllinoisRocstar/AccelerateCFD_CE" target="_blank">this brilliant work</a> </p>
+    
+    <p>Interestingly, this open flows has a strong advective nature displaying strong vortex shedding phenomena.
+    The idea consists in finding out if the a priori sparsification can identify interesting flow structures.</p>
+
+   
+	<!--<video style="display:block; margin: 0 auto;" style="width:50%" controls autoplay loop>-->
+		<video style="width:100%" controls autoplay loop>
+   		<source src="../images/New_modes.mp4" type="video/mp4">
+      	<source src="../images/New_modes.ogg" type="video/ogg">
+		</video>
+		<figcaption> Effect of the rotation on a spatial modes and its energy content at different frequency  </figcaption>
+  		
+		<!--<video style="display:block; margin: 0 auto;" style="width:50%" controls autoplay loop>-->
+		<video style="width:100%" controls autoplay loop>
+   		<source src="../images/New_TKE.mp4" type="video/mp4">
+      	<source src="../images/New_TKE.ogg" type="video/ogg">
+		</video>
+		<figcaption> Effect of the rotation on the turbulent kinetic energy</figcaption>
+  		
+
+
+    <p> New contents to come.... developing of a framework to handle more complex geometries</p>
+
+	<p>In addition, the figure below shows the framework developed to manage flows in compelx geometries with arbitrary mesh structures.
+    The framework developed heavily relies on <a href="https://github.com/IllinoisRocstar/AccelerateCFD_CE" target="_blank">this brilliant work</a> </p>
 
     <figure>
       <img src="../images/Framework.png" alt="Snow" style="width:100%">
      <figcaption>Schematic of the framework utilised to tackle configurations with complex geometries</figcaption>
      </figure>
 
-
-    <p>Interestingly, this open flows has a strong advective nature displaying strong vortex shedding phenomena.
-    The idea consists in finding out if the a priori sparsification can identify interesting flow structures.</p>
-
-    <div class="row">
+	 <div class="row">
     		<div class="column">
       			<!--<video src = "../images/KS_vid1.mp4" style="width:80%" controls autoplay loop></video>-->
       			<video style="width:70%"  controls autoplay loop>
@@ -322,8 +341,6 @@
   			<figcaption> Turbulent kinetic energy for the training dataset (in black) and the prediction from the sparse system (in red)</figcaption>
     		</div>
   	</div>
-
-    <p> New contents to come....</p>
 
    <p>Details about the methodology and the implementation are explained in the <a href="../pdfs/Paper3_AprioriSparsification.pdf" target="_blank">draft</a> of the upcoming paper.
    <!--<embed src="../pdfs/Paper3_AprioriSparsification.pdf" width="800px" height="800px" />-->
