@@ -110,11 +110,13 @@
 
     <!-- Page Header -->
         <header class="intro-header" style="background-image: url('../images/turb.png')">
+		<!--<header class="intro-header" style="background-image: url('../images/Y250.png')">-->
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Sparsification techniques for Reduced Order Models of turbulent flows</h1>
+                       <!--<h1 style="color:black;">Sparsification techniques for Reduced Order Models of turbulent flows</h1>-->
+						<h1>Sparsification techniques for Reduced Order Models of turbulent flows</h1>
                     </div>
                 </div>
             </div>
@@ -131,7 +133,7 @@
 	<h1>Motivation</h1>
 
   <p>In the classical description of developed turbulent flows energy is transferred across the hierarchy of coherent structures via nonlinear triadic interactions.
-  Implicit in this picture is the fact that not all interactions have the same importance, but they occur in preferential patterns.
+  Implicit in this picture is the fact that <b>not all interactions have the same importance, but they occur in preferential patterns</b>.
   Evidence points out that the nonlinear interaction pattern among coherent structures is sparse</p>
 
   <p>Mathematically we can visualise each structure as a point in a graph and each interactions as an edge connecting two different points. Therefore, if the two structures are interacting
@@ -139,8 +141,7 @@
 
   	<img src="../img/graph.png" alt="graph" style="width:100%">
 
-  <p>The last sentence translated in the Machine Learning framework where a structure is represented as a dimension of the system sums up to : you need a non-zero value when two dimensions
-  interacts between each others.</p>
+  <p>The last sentence translated in the Machine Learning framework where a structure is represented as a dimension of the system sums up you need a non-zero value when two dimensions interact between each others.</p>
 
   <p> Therefore, you should ask yourself... Are all the dimensions of my input vector interacting with all the others?</p>
   <p> Or in a broader sense...</p>
@@ -261,23 +262,41 @@
      To conclude this example panel (7) shows the result of the time integration of the sparse system. From visual inspection we observe that the optimally sparse model reproduces the flow
      features of the original DNS with a reduced number of interactions.</p>
 
-		<!--<video style="display:block; margin: 0 auto;" style="width:50%" controls autoplay loop>-->
+		<!--<video style="display:block; margin: 0 auto;" style="width:50%" controls autoplay loop>
 		<video style="width:100%" controls autoplay loop>
-   		<source src="../images/cavity_video.mp4" type="video/mp4">
-      	<source src="../images/cavity_video.ogg" type="video/ogg">
+   		<source src="../images/Different_Re.mp4" type="video/mp4">
+      	<source src="../images/Different_Re.ogg" type="video/ogg">
 		</video>
-		<figcaption> Comparison between different reduced order modelling techniques against the baseline DNS.  </figcaption>
+		<figcaption> Comparison between different reduced order modelling techniques against the baseline DNS. </figcaption>-->
   		
+		<div class="row">
+  		<div class="column">
+    			<!--<video src = "../images/KS_vid1.mp4" style="width:80%" controls autoplay loop></video>-->
+    			<video style="width:100%"  controls autoplay loop>
+   				     <source src="../images/Re2e4.mp4" type="video/mp4">
+                 <source src="../images/Re2e4.ogg" type="video/ogg">
+			    </video>
+
+			<figcaption>Panel 6 - Comparison between the predicted turbulent kinetic energy for the dense model and the sparse model.</figcaption>
+  		</div>
+  		<div class="column">
+    			<!--<video src = "../images/KS_vid2.mp4" style="width:80%" controls autoplay loop></video>-->
+			<video style="width:100%"  controls autoplay loop>
+   				<source src="../images/Re5e4.mp4" type="video/mp4">
+          <source src="../images/Re5e4.ogg" type="video/ogg">
+			</video>
+			<figcaption> Panel 7 - Velocity Magnitude predicted by the sparse model. </figcaption>
+  		</div>
+	</div>
+
+
+ <figure>
+     <img src="../images/Comp_Cost.jpg" alt="Snow" style="width:100%">
+    <figcaption>Computational cost</figcaption>
+    </figure>
+
 
 	 <h1>Ongoing Work</h1>
-
-	<!--The last part of the research will be dedicated to two works in parallel. The first is extend and further validate the framework presented for the two cavity flow to a three dimensional test case. The second is the development of the Sparse Interacting Decomposition (SID).
-
-	 <h2>Three Dimensional Turbulence</h2>
-
-	 <p>We are applying our framework to a three dimensional turbulent flow where the interactions between flow structure are local.
-     The main target of this analysis is to show if and how it is possible to exploit the locality of the interactions to generated more and more sparse models as the Reynolds number increases but keeping,
-     at the same time, an approximately constant reconstruction error</p>-->
 
 	 <h2>Sparse Interacting Decomposition SID</h2>
 
@@ -289,11 +308,20 @@
     <figcaption>Schematic comparison between a posteriori sparsification in the blue sqaure and a priori sparsification in the red square.</figcaption>
     </figure>
 
-    <p>With this a priori methodology I'm currently analysing the separated flow over a
-    backward facing step.</p>
-    
-    <p>Interestingly, this open flows has a strong advective nature displaying strong vortex shedding phenomena.
-    The idea consists in finding out if the a priori sparsification can identify interesting flow structures.</p>
+    <p>The new basis is obtained by rotating the old basis into a new one via the rotation matrix X obtained by solving the following optimisation problem.</p>
+
+	<figure>
+     <img src="../images/Apriori_concept.png" alt="Snow" style="width:100%">
+    <figcaption>Concept of the subspace rotation technique and its effect of the ROM coefficients</figcaption>
+    </figure>
+
+
+	 <figure>
+     <img src="../images/Apriori_optimisation.png" alt="Snow" style="width:100%">
+    <figcaption>Mathematical formulation of the optimisation problem in term of <span lang="latex">$\color{black}{\mathbf{X}}$</span></figcaption>
+    </figure>
+
+
 
    
 	<!--<video style="display:block; margin: 0 auto;" style="width:50%" controls autoplay loop>-->
@@ -303,6 +331,16 @@
 		</video>
 		<figcaption> Effect of the rotation on a spatial modes and its energy content at different frequency  </figcaption>
   		
+
+		<!--<video style="display:block; margin: 0 auto;" style="width:50%" controls autoplay loop>-->
+		<video style="width:100%" controls autoplay loop>
+   		<source src="../images/sparsity_and_Q.mp4" type="video/mp4">
+      	<source src="../images/sparsity_and_Q.ogg" type="video/ogg">
+		</video>
+		<figcaption> Effect of the rotation on the sparsity and on the structure of the tensor<span lang="latex">$\color{black}{Q_{ijk}}$</span>  </figcaption>
+  		
+
+
 		<!--<video style="display:block; margin: 0 auto;" style="width:50%" controls autoplay loop>-->
 		<video style="width:100%" controls autoplay loop>
    		<source src="../images/New_TKE.mp4" type="video/mp4">
@@ -310,17 +348,46 @@
 		</video>
 		<figcaption> Effect of the rotation on the turbulent kinetic energy</figcaption>
   		
+	<h2>Three dimensional turbulence</h2>
 
+	<div class="row">
+    		<div class="column">
+      			<!--<video src = "../images/KS_vid1.mp4" style="width:80%" controls autoplay loop></video>-->
+      			<video style="width:100%"  controls autoplay loop>
+     				     <!--<source src="../images/time_integration.mp4" type="video/mp4">-->
+                   <source src="../images/Q_channel.ogv" type="video/ogg">
+  			    </video>
 
-    <p> New contents to come.... developing of a framework to handle more complex geometries</p>
+  			<figcaption>Q-criterion displaying the vortical structure</figcaption>
+    		</div>
+    		<div class="column">
+      			<!--<video src = "../images/KS_vid2.mp4" style="width:80%" controls autoplay loop></video>-->
+  			<figure>
+      		<img src="../images/Channel_Nijk.png" alt="Snow" style="width:100%">
+     		</figure>
+  			<figcaption>Average triadic interaction for the first 10 modes of the channel flow</figcaption>
+    		</div>
+  	</div>
+	
+	<p>The aforementioned picture shows that triadic interactions are contained in a band across the diagonal of width <span lang="latex">$\color{black}{\delta}$</span>. If the width of the bandwidth stays constant for different flow configuration this could, crucially, lead to a computational cost scaling as:</p>
 
-	<p>In addition, the figure below shows the framework developed to manage flows in compelx geometries with arbitrary mesh structures.
+		$$\color{black}{\hat{CC} \sim \delta N^2}$$
+
+	<p>with <span lang="latex">$\color{black}{\delta}$</span> being a constant and <span lang="latex">$\color{black}{N^2}$</span> leading the computational cost. 
+		Crucially, the dependence of the bandwidth from the Reynolds number <span lang="latex">$\color{black}{\delta = f(Re)}$</span> could be the key enabler for the generation of accurate and computationally cheap reduced order models.</p>
+
+    <h2>Complex Geometries handling</h2>
+
+	<p>The figure below shows the framework developed to manage flows in compelx geometries with arbitrary mesh structures.
     The framework developed heavily relies on <a href="https://github.com/IllinoisRocstar/AccelerateCFD_CE" target="_blank">this brilliant work</a> </p>
 
     <figure>
       <img src="../images/Framework.png" alt="Snow" style="width:100%">
      <figcaption>Schematic of the framework utilised to tackle configurations with complex geometries</figcaption>
      </figure>
+
+	<p>Interestingly, this open flows has a strong advective nature displaying strong vortex shedding phenomena.
+    The idea consists in finding out if the a priori sparsification can identify interesting flow structures.</p>
 
 	 <div class="row">
     		<div class="column">
@@ -330,7 +397,7 @@
                    <source src="../images/Q.ogv" type="video/ogg">
   			    </video>
 
-  			<figcaption>Q-criterion displaying the vortex shdding in the shear layers</figcaption>
+  			<figcaption>Q-criterion displaying the vortex shedding in the shear layers</figcaption>
     		</div>
     		<div class="column">
       			<!--<video src = "../images/KS_vid2.mp4" style="width:80%" controls autoplay loop></video>-->
