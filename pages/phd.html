@@ -134,7 +134,7 @@
 
   <p>In the classical description of developed turbulent flows energy is transferred across the hierarchy of coherent structures via nonlinear triadic interactions.
   Implicit in this picture is the fact that <b>not all interactions have the same importance, but they occur in preferential patterns</b>.
-  Evidence points out that the nonlinear interaction pattern among coherent structures is sparse</p>
+  Evidence points out that the nonlinear interaction pattern among coherent structures is sparse.</p>
 
   <p>Mathematically we can visualise each structure as a point in a graph and each interactions as an edge connecting two different points. Therefore, if the two structures are interacting
    a non-zero value in the matrix that describes the graph of the energetic interactions is present.</p>
@@ -152,8 +152,7 @@
 	<h1>Methodology</h1>
 	<h2>Reduced Order Modelling</h2>
 
-	<p>A successful approach to tackle high complexity flow is to decompose the field into spatial and temporal modes that satisfy certain properties. Then, as displayed in figure (1) the governing equation are
-  projected onto the subspace spanned by a subset of these modes. As a result the original system is equivalent to a set of coupled ODEs.
+	<p>A successful approach to tackle high complexity flow is to decompose the field into spatial and temporal modes. Then, as displayed in figure (1) the governing equation are projected onto the subspace spanned by a subset of these modes. As a result, the original system is equivalent to a set of coupled ODEs.
   As shown in the last panel of figure (1) the system is composed by a constant, linear and quadratic term corresponding to the pressure, viscous and convective term in the Navier-Stokes equations.
   A popular approach is projecting the governing equations onto the subspace spanned by the POD modes. </p>
 
@@ -161,39 +160,36 @@
 
 	<figure>
 		<img src="../images/ROM.png" alt="Snow" style="width:100%">
-    	<figcaption>Fig.1 - Generation of the Reduced Order Model (ROM) from first principle and the corresponding realisation.</figcaption>
+    	<figcaption>Figure 1 - Generation of the Reduced Order Model (ROM) from first principle and the corresponding realisation.</figcaption>
     </figure>
 
 	<p>The main limitation of this approach arises from the non linear nature of the system where every mode interacts with all the others in a non trivial way. This makes the tensor
   <span lang="latex">$\color{black}{Q_{ijk}}$</span> dense producing computationally expensive models with an hindering the underlying physics.</p>
 
-  <p>Our main goal is to integrate the machine learning framework in the process of generating the Reduced Order Model and learning from data which terms are truly relevant for the dynamics.
-  We believe that this could be the key enabler to obtain a family of computationally efficient and easily interpretable models that contains only the necessary physics.</p>
+  <p>Our main goal is to integrate the machine learning framework in the process of generating the Reduced Order Model and learning from data which terms are truly relevant for the dynamics.</p>
 
 
 	<h2>Sparsification of ROMs</h2>
 
 	<p>In a nutshell machine learning is the field of computer science that "uses statistical techniques that give the machine the ability to "learn" from data without being explicitly programmed.
-    Figure (2) shows an overview on the possible machine learning techniques. The proposed approach aims to couple modal decomposition techniques and regression technique to automatically generate
-    from data models where only the important features of turbulence are retained</p>
+    Figure (2) shows an overview on the possible machine learning techniques. The proposed approach aims to couple modal decomposition techniques and regression technique to automatically generate from data models where only the important features of turbulence are retained</p>
 
 	<figure>
 		<img src="../images/ML_framework.png" alt="Snow" style="width:100%">
-		<figcaption>Fig.2 - Overview of possible machine learning techniques. The proposed approach couples two techniques belonging to supervised and unsupervised learning respectively.</figcaption>
+		<figcaption>Figure 2 - Overview of possible machine learning techniques. The proposed approach couples two techniques belonging to supervised and unsupervised learning respectively.</figcaption>
     </figure>
 
-	<p>It is known that the energy transfer inside a turbulent flows occurs according preferential patterns. Therefore not all triadic interaction have the same importance. The dynamics of a certain scale depend predominantly upon the dynamics of a subset of the set of scales and the complementary set of structures can be generally neglected with minor global effects</p>
-	<p>Figure 3 (a) shows how our idea can be located in between a pure Machine Learning approach (very effective with complex systems but poorly generalise) and a first
-     principle approach (very general but difficult and expensive to use in case of complex physics).
+	<p>Since the dynamics of a certain scale depend predominantly upon the dynamics of a subset of the set of scales and the complementary set of structures can be generally neglected with minor global effects</p>
+	<p>Figure 3 (a) shows how our idea can be located in between a <b>pure Machine Learning approach (effective with complex systems but poorly generalizable)</b> and a <b>first principle approach (general but difficult and expensive</b> to use in case of complex physics).
     We aim to bridge the gap between this two diametrically opposite approaches.</p>
 
 	<figure>
 	<img src="../images/methodology.png" alt="Snow" style="width:100%">
-    <figcaption>Fig.3 - The proposed approach can be located in between a pure data driven approach (Machine Learning) and a model based ones (First Principle) as shown in panel (a). Panel b) shows the set up of the sparse regression with the integration of physical constraints (3) to generate the sparse model.</figcaption>
+    <figcaption>Figure 3 - The proposed approach can be located in between a pure data driven approach (Machine Learning) and a model based ones (First Principle) as shown in panel (a). Panel b) shows the set up of the sparse regression with the integration of physical constraints (3) to generate the sparse model.</figcaption>
     </figure>
 
 
-    <p>Figure 3 (b) shows a sketch of the step needed to set up our framework. They can be summarized as follow.</p>
+    <p>Figure 3 (b) shows a sketch of the step needed to set up our framework. They can be summarised as follow.</p>
 		<ol>
   			<li>Fully resolved simulation to generate the data-set</li>
   			<li>Projection of the governing equations onto an optimal subspace generated by modal decomposition as shown in figure (1)</li>
@@ -205,30 +201,30 @@
 
 	<h1>Two dimensional turbulence</h1>
 
-	<p>As demonstration, we applyed this methodology to the unsteady flow developing inside a lid driven cavity at Re = 10.000. Panel (4) shows an animation of the magnitude of the velocity field. We observe that, despite the simple geometry, the flow field presents complex flow features such recirculation zones in the corners of the cavity and a strong shear layer. These features make this problem a good test bed for the proposed methodology.</p>
+	<p>As demonstration, we applied this methodology to the unsteady flow developing inside a lid driven cavity at Re = 10.000. Panel (4) shows an animation of the magnitude of the velocity field. We observe that, despite the simple geometry, the flow field presents complex flow features such recirculation zones in the corners of the cavity and a strong shear layer making this problem a good test bed.</p>
 
 
 	<video  style="width:100%" controls autoplay loop>
    		<source src="../images/Re2e4.mp4" type="video/mp4">
       <source src="../images/Re2e4.ogg" type="video/ogg">
 	</video>
-	<figcaption>Panel 4 - Velocity Magnitude flow blue (low) to red (high)</figcaption>
+	<figcaption> Figure 4 - Vorticity Magnitude flow blue (low) to red (high)</figcaption>
 
 	<p>The sparse model is obtained solving the LASSO problem</p>
 
 	$$\color{black}{ \hat{{\boldsymbol \beta}}_i = \underset{{\boldsymbol \beta}_i}{\mathrm{argmin}} \left \{  ||{\boldsymbol \Theta}(A) {\boldsymbol \beta}_i - \dot{A}_i||_2^2 +  \gamma||{\boldsymbol \beta}_i||_1 \right \}, \quad \quad i=1,...,N}$$
 
-	<p>This is composed by a least-squares problem that minimise the error of the reconstructed solution with respect the target and a <span lang="latex">$\color{black}{l_1}$</span> penalisation term that encourages the sparsity of the corresponding solution. The relative importance between this two terms is weighted by the regularisation weight indicated as <span lang="latex">$\color{black}{\gamma}$</span>. It is not possible to set a priori the value of the regularisation weight so we varied during the analysis generating a family of models with different sparsity/accuracy trade-off and plotting them model on a sparsity accuracy plane.
-	Ideally, the optimal model is the one with low density (corresponding to a reduced number of coefficients) and low prediction accuracy.</p>
+	<p>This is composed by a least-squares problem that minimise the error of the reconstructed solution with respect the target and a <span lang="latex">$\color{black}{l_1}$</span> penalisation term that encourages the sparsity of the corresponding solution. The relative importance between this two terms is weighted by the regularisation weight indicated as <span lang="latex">$\color{black}{\gamma}$</span>. It is not possible to set a priori the value of the regularisation weight so it has been modified during the analysis generating a family of models with different sparsity/accuracy trade-off and plotting them model on a sparsity accuracy plane.
+	Ideally, the <b>optimal</b> model is the one with <b>low density</b> (corresponding to a reduced number of coefficients) and <b>low reconstruction error <span lang="latex">$\color{black}{\epsilon}$</span> </b>.</p>
 
 
 	<video style="display:block; margin: 0 auto;" style="width:80%" controls autoplay loop>
    		<source src="../images/L2_curves.mp4" type="video/mp4">
       <source src="../images/L2_curves.ogg" type="video/ogg">
 	</video>
-	<figcaption>Panel 5 - Sparsification curve in a sparsity reconstruction error plane. Every point corresponds to a different model obtained with a different value of the regularisation weight. </figcaption>
+	<figcaption>Figure 5 - Sparsification curve in a sparsity reconstruction error plane. Every point corresponds to a different model obtained with a different value of the regularisation weight.</figcaption>
 
-	<p>Figure (5) shows the sparsification obtained solving the LASSO problem for increasing values of the regularisation weight. Interestingly we observe the presence of a large flat part for high value of the density of system. This means that is possible to eliminate many terms from the system without affecting the reconstruction error.
+	<p>Figure (5) shows the sparsification curve obtained solving the LASSO problem for increasing values of the regularisation weight. Interestingly we observe the presence of a large flat part for high value of the density of system. This means that is possible to eliminate many terms from the system without affecting the reconstruction error.
 	In addition, we can identify an optimally sparse system, in this case retaining only 15% of the coefficients (<span lang="latex">$\color{black}{\rho \sim 0.15}$</span>), that present low density and low value of the reconstruction error.</p>
 	<p>We now analyse the performance of a optimally sparse model obtained with a value of the regularisation weight that we will indicate as optimal <span lang="latex">$\color{black}{\gamma}$</span>.</p>
 
@@ -240,7 +236,7 @@
                  <source src="../images/time_integration.ogg" type="video/ogg">
 			    </video>
 
-			<figcaption>Panel 6 - Comparison between the predicted turbulent kinetic energy for the dense model and the sparse model.</figcaption>
+			<figcaption>Figure 6 - Comparison between the predicted turbulent kinetic energy for the dense model and the sparse model.</figcaption>
   		</div>
   		<div class="column">
     			<!--<video src = "../images/KS_vid2.mp4" style="width:80%" controls autoplay loop></video>-->
@@ -248,7 +244,7 @@
    				<source src="../images/Rom_en90.mp4" type="video/mp4">
           <source src="../images/Rom_en90.ogg" type="video/ogg">
 			</video>
-			<figcaption> Panel 7 - Velocity Magnitude predicted by the sparse model. </figcaption>
+			<figcaption> Figure 7 - Velocity Magnitude predicted by the sparse model. </figcaption>
   		</div>
 	</div>
 
@@ -262,13 +258,10 @@
      To conclude this example panel (7) shows the result of the time integration of the sparse system. From visual inspection we observe that the optimally sparse model reproduces the flow
      features of the original DNS with a reduced number of interactions.</p>
 
-		<!--<video style="display:block; margin: 0 auto;" style="width:50%" controls autoplay loop>
-		<video style="width:100%" controls autoplay loop>
-   		<source src="../images/Different_Re.mp4" type="video/mp4">
-      	<source src="../images/Different_Re.ogg" type="video/ogg">
-		</video>
-		<figcaption> Comparison between different reduced order modelling techniques against the baseline DNS. </figcaption>-->
-  		
+	<h2>Effect of Reynolds number on the computational cost</h2>
+
+	<p>Now the same configuration for increasing Reynolds numbers will be considered. Increasing the Reynolds number widens the range of dynamically active scales hopefully allowing a more effective sparsification.</p>
+
 		<div class="row">
   		<div class="column">
     			<!--<video src = "../images/KS_vid1.mp4" style="width:80%" controls autoplay loop></video>-->
@@ -277,77 +270,79 @@
                  <source src="../images/Re2e4.ogg" type="video/ogg">
 			    </video>
 
-			<figcaption>Panel 6 - Comparison between the predicted turbulent kinetic energy for the dense model and the sparse model.</figcaption>
+			<figcaption>Figure 8 - Cavity flow at Re = 20000.</figcaption>
   		</div>
   		<div class="column">
-    			<!--<video src = "../images/KS_vid2.mp4" style="width:80%" controls autoplay loop></video>-->
 			<video style="width:100%"  controls autoplay loop>
    				<source src="../images/Re5e4.mp4" type="video/mp4">
           <source src="../images/Re5e4.ogg" type="video/ogg">
 			</video>
-			<figcaption> Panel 7 - Velocity Magnitude predicted by the sparse model. </figcaption>
+			<figcaption> Figure 9 - Cavity flow at Re = 50000. </figcaption>
   		</div>
 	</div>
 
+	<p>Figure 10 displays the trend of the optimal density against the value of the Reynolds number and the normalised computational cost against the normalised number of modes. Panel (b) shows the reference computational cost <span lang="latex">$\color{black}{N^3}$</span> as black line and the computational cost after sparsification <span lang="latex">$\color{black}{\sim \rho_{opt} N^3}$</span> displayed by the symbols.</p>
 
  <figure>
      <img src="../images/Comp_Cost.jpg" alt="Snow" style="width:100%">
-    <figcaption>Computational cost</figcaption>
+    <figcaption>Figure 10 - Value of the optimal density <span lang="latex">$\color{black}{\rho_{opt}}$</span> with the Reynolds number and of the normalised computational cost <span lang="latex">$\color{black}{\hat{CC}}$</span> with the normalised number of modes <span lang="latex">$\color{black}{\hat{N}}$</span>. </figcaption>
     </figure>
 
+	<p> Interestingly the separation between scales enables a lower scaling of the computational cost as the number of modes grows.</p>
 
 	 <h1>Ongoing Work</h1>
 
 	 <h2>Sparse Interacting Decomposition SID</h2>
 
-	 <p>We observe that the physics of a turbulent flow is intrinsically sparse since a given structure interacts only with a small subset of all the other structures. However, classical reduction order techniques are not able to incorporate this sparsity. We are able to restore this sparsity with a posteriori procedure performed on the dense ROM.
-	 The main idea behind the SID decomposition is to generate a modal decomposition whose spatial modes incorporate a priori the sparsity of turbulent flows generating then a ROM that present already sparsity features.</p>
+	<p>The downside of the a posteriori of this methodology is that the strict link between modal structures and the projection-based model is lost, since the procedure involves a fine tuning of the nonzero model coefficients without modifying the basis functions. Hence, the analysis of the resulting interactions is not necessarily consistent with the spatial structure of the modal functions.
+The main idea behind the SID decomposition is to encode the sparsity in the modal decomposition generating a sparse ROM whose coefficients remain consistent with the spatial structure of the modes.</p>
 
    <figure>
      <img src="../images/Apriori_vs_Aposteriori.png" alt="Snow" style="width:100%">
-    <figcaption>Schematic comparison between a posteriori sparsification in the blue sqaure and a priori sparsification in the red square.</figcaption>
+    <figcaption>Figure 11 - Schematic comparison between a posteriori sparsification in the blue sqaure and a priori sparsification in the red square.</figcaption>
     </figure>
 
-    <p>The new basis is obtained by rotating the old basis into a new one via the rotation matrix X obtained by solving the following optimisation problem.</p>
+    <p>The new basis is obtained by rotating the old basis into a new one via the rotation matrix <span lang="latex">$\color{black}{\mathbf{X}}$</span> as sketched in figure 12. </p>
 
 	<figure>
      <img src="../images/Apriori_concept.png" alt="Snow" style="width:100%">
-    <figcaption>Concept of the subspace rotation technique and its effect of the ROM coefficients</figcaption>
+    <figcaption>Figure 12 - Concept of the subspace rotation technique and its effect of the ROM coefficients</figcaption>
     </figure>
 
+	<p>The rotation matrix <span lang="latex">$\color{black}{\mathbf{X}}$</span> is obtained by solving the optimisation problem shown in figure 13 composed by three building blocks each highlighting a different aspect in the resulting decomposition.</p>
 
 	 <figure>
      <img src="../images/Apriori_optimisation.png" alt="Snow" style="width:100%">
-    <figcaption>Mathematical formulation of the optimisation problem in term of <span lang="latex">$\color{black}{\mathbf{X}}$</span></figcaption>
+    <figcaption>Figure 13 - Mathematical formulation of the optimisation problem in term of <span lang="latex">$\color{black}{\mathbf{X}}$</span></figcaption>
     </figure>
 
 
 
-   
-	<!--<video style="display:block; margin: 0 auto;" style="width:50%" controls autoplay loop>-->
 		<video style="width:100%" controls autoplay loop>
    		<source src="../images/New_modes.mp4" type="video/mp4">
       	<source src="../images/New_modes.ogg" type="video/ogg">
 		</video>
-		<figcaption> Effect of the rotation on a spatial modes and its energy content at different frequency  </figcaption>
+		<figcaption>Figure 14 - Effect of the rotation on a spatial modes and its energy content at different frequency  </figcaption>
   		
+		<p>Figure 14 shows how the rotation affects the spatial shape and the spectral content of the 20-th mode of the lid-driven cavity flow.</p>
 
-		<!--<video style="display:block; margin: 0 auto;" style="width:50%" controls autoplay loop>-->
 		<video style="width:100%" controls autoplay loop>
    		<source src="../images/sparsity_and_Q.mp4" type="video/mp4">
       	<source src="../images/sparsity_and_Q.ogg" type="video/ogg">
 		</video>
-		<figcaption> Effect of the rotation on the sparsity and on the structure of the tensor<span lang="latex">$\color{black}{Q_{ijk}}$</span>  </figcaption>
+		<figcaption>Figure 15 - Effect of the rotation on the sparsity and on the structure of the tensor<span lang="latex">$\color{black}{Q_{ijk}}$</span>.  </figcaption>
   		
+		<p>Figure 15 shows the density of the system and the retained interactions in <span lang="latex">$\color{black}{Q_{ijk}}$</span> for increasing values of the penalisation weight <span lang="latex">$\color{black}{\xi}$</span>.</p>
 
-
-		<!--<video style="display:block; margin: 0 auto;" style="width:50%" controls autoplay loop>-->
 		<video style="width:100%" controls autoplay loop>
    		<source src="../images/New_TKE.mp4" type="video/mp4">
       	<source src="../images/New_TKE.ogg" type="video/ogg">
 		</video>
-		<figcaption> Effect of the rotation on the turbulent kinetic energy</figcaption>
+		<figcaption>Figure 16 - Effect of the rotation on the turbulent kinetic energy</figcaption>
   		
+		<p>Figure 16 shows the effect of the stabilisation constraint on the long time behaviour of the turbulent kinetic energy. The stabilisation is obtained progressively increasing the absolute value of <span lang="latex">$\color{black}{\eta}$</span>.</p>
+		
+
 	<h2>Three dimensional turbulence</h2>
 
 	<div class="row">
@@ -358,14 +353,14 @@
                    <source src="../images/Q_channel.ogv" type="video/ogg">
   			    </video>
 
-  			<figcaption>Q-criterion displaying the vortical structure</figcaption>
+  			<figcaption> Figure 17 - Q-criterion displaying the vortical structure</figcaption>
     		</div>
     		<div class="column">
       			<!--<video src = "../images/KS_vid2.mp4" style="width:80%" controls autoplay loop></video>-->
   			<figure>
       		<img src="../images/Channel_Nijk.png" alt="Snow" style="width:100%">
      		</figure>
-  			<figcaption>Average triadic interaction for the first 10 modes of the channel flow</figcaption>
+  			<figcaption>Figure 18 - Average triadic interaction for the first 10 modes of the channel flow</figcaption>
     		</div>
   	</div>
 	
@@ -383,7 +378,7 @@
 
     <figure>
       <img src="../images/Framework.png" alt="Snow" style="width:100%">
-     <figcaption>Schematic of the framework utilised to tackle configurations with complex geometries</figcaption>
+     <figcaption>Figure 19 - Schematic of the framework utilised to tackle configurations with complex geometries</figcaption>
      </figure>
 
 	<p>Interestingly, this open flows has a strong advective nature displaying strong vortex shedding phenomena.
@@ -392,12 +387,12 @@
 	 <div class="row">
     		<div class="column">
       			<!--<video src = "../images/KS_vid1.mp4" style="width:80%" controls autoplay loop></video>-->
-      			<video style="width:70%"  controls autoplay loop>
+      			<video style="width:100%"  controls autoplay loop>
      				     <!--<source src="../images/time_integration.mp4" type="video/mp4">-->
                    <source src="../images/Q.ogv" type="video/ogg">
   			    </video>
 
-  			<figcaption>Q-criterion displaying the vortex shedding in the shear layers</figcaption>
+  			<figcaption>Figure 20 Q-criterion displaying the vortex shedding in the shear layers</figcaption>
     		</div>
     		<div class="column">
       			<!--<video src = "../images/KS_vid2.mp4" style="width:80%" controls autoplay loop></video>-->
@@ -405,7 +400,7 @@
      				<source src="../images/step_DyNN.mp4" type="video/mp4">
             <source src="../images/step_DyNN.ogg" type="video/ogg">
   			</video>
-  			<figcaption> Turbulent kinetic energy for the training dataset (in black) and the prediction from the sparse system (in red)</figcaption>
+  			<figcaption>Figure 21 - Turbulent kinetic energy for the training dataset (in black) and the prediction from the sparse system (in red)</figcaption>
     		</div>
   	</div>
 
